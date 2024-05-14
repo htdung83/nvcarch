@@ -10,11 +10,12 @@
     <meta charset="utf-8">
     <link rel="icon" href="{{ asset('theme/images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css"
-          href="//fonts.googleapis.com/css?family=Lato:300,300italic%7CMontserrat:400,700">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('theme/icons/font/bootstrap-icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('theme/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('theme/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/css/fonts.css') }}">
     <style>.ie-panel {
             display: none;
             background: #212121;
@@ -44,7 +45,9 @@
 <div class="page">
     @include('admin.layouts.partials.header')
 
-    @yield('mainContent')
+    <div class="container mt-4">
+        @yield('mainContent')
+    </div>
 </div>
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>

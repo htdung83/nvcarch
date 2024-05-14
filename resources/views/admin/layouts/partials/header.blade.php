@@ -8,15 +8,13 @@
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
                     <div class="rd-navbar-brand">
-                        <a class="brand-name rounded-3 bg-white p-2" href="{{ url('/') }}" title="{{ config('app.name') }}">
-                            <img src="{{ asset('theme/images/logo.jpg') }}" alt="{{ config('app.name') }}"/>
-                        </a>
+                        <h1 class="text-uppercase text-white h3">@stack('pageTitle')</h1>
                     </div>
                 </div>
                 <!-- RD Navbar Nav-->
                 <div class="rd-navbar-nav-wrap rd-navbar-search_not-collapsable">
                     <div class="rd-navbar-search_collapsable">
-                        @include('web.layouts.partials.navigation')
+                        @include('admin.layouts.partials.navigation')
                     </div>
                 </div>
             </div>
