@@ -50,15 +50,14 @@
     <footer class="novi-background bg-cover footer-corporate bg-gray-darker">
         <div class="container">
             <div class="footer-corporate__inner">
-                <p class="rights"><span>Constructo</span><span>&nbsp;</span><span class="copyright-year"></span>. All
-                    Rights Reserved</p>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span> - @lang('contact-info.company_full_name')</span></p>
                 <ul class="list-inline-xxs">
                     <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-facebook" href="#"></a></li>
-                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a></li>
-                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-google-plus" href="#"></a></li>
-                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a></li>
+{{--                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a></li>--}}
+{{--                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-google-plus" href="#"></a></li>--}}
+{{--                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a></li>--}}
                     <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-youtube" href="#"></a></li>
-                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-pinterest" href="#"></a></li>
+{{--                    <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-pinterest" href="#"></a></li>--}}
                 </ul>
             </div>
         </div>

@@ -17,4 +17,9 @@ class ServiceRepository
 
         return $list->get();
     }
+
+    public function getNextPosition(): int
+    {
+        return intval(Service::query()->max('position')) + 1;
+    }
 }
