@@ -11,7 +11,7 @@ class StoreOrUpdateServiceRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,17 @@ class StoreOrUpdateServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'icon' => 'nullable|max:100',
+            'name' => 'required|max:100',
+            'description' => 'required|max:255',
+            'position' => 'required|integer',
         ];
+    }
+
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'position' => intval($this->input('position'))
+        ]);
     }
 }

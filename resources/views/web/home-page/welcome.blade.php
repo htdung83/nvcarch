@@ -119,94 +119,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="heading-decorated">Our Services</h4>
+                    <h4 class="heading-decorated">DỊCH VỤ CỦA CHÚNG TÔI</h4>
                 </div>
             </div>
             <div class="row row-50 justify-content-md-center justify-content-lg-start">
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler"></span></div>
+                @foreach($serviceList as $service)
+                    <div class="col-md-6 col-xl-4">
+                        <!-- Blurb circle-->
+                        <article class="blurb blurb-circle">
+                            <div class="unit flex-sm-row unit-spacing-md">
+                                <div class="unit__left">
+                                    <div class="blurb-circle__icon"><span class="icon novi-icon novi-background {{ $service->icon }}"></span></div>
+                                </div>
+                                <div class="unit__body">
+                                    <p class="heading-6 blurb__title"><a href="#">{{ $service->name }}</a></p>
+                                    <p>{{ $service->description }}</p>
+                                </div>
                             </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Pre-construction Services</a></p>
-                                <p>We take our time on initial planning before any construction begins, to balance all the financial and efficiency issues beforehand...</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-users"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">General Contracting</a></p>
-                                <p>We have a long list of professional contractors, whom our engineers and architects enjoy to work with on a majority of our projects!</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-wall"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Construction Services</a></p>
-                                <p>Our customers love the pace/quality tempo that we show during each of the principal construction processes!</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-apartment"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Construction Management</a></p>
-                                <p>Construction project management is essential. We're using the most time and iterations efficient life cycles methods for that.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-home4"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Building Information Modeling (BIM)</a></p>
-                                <p>Oftentimes physical and functional essence of any construction project needs to be represented digitally, in a 3D model format.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler2"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Design-Build</a></p>
-                                <p>If a project is not too complex, we may hire a designer-builder type of contractor, to make the longevity of the construction shorter.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -215,7 +147,7 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-11 col-lg-9 col-xl-8">
-                    <h4 class="heading-decorated">IF YOU CAN ENVISION IT, THEN WE CAN BUILD IT! <br class="d-none d-lg-inline"> TELL US MORE ABOUT YOUR PROJECT</h4><a class="button button-primary" href="#modal" data-bs-toggle="modal">Contact Us</a>
+                    <h4 class="heading-decorated">NẾU BẠN HÌNH DUNG ĐƯỢC, CHÚNG TÔI CÓ THỂ XÂY ĐƯỢC!<br class="d-none d-lg-inline"> HÃY CHO CHÚNG TÔI BIẾT Ý TƯỞNG CỦA BẠN </h4><a class="button button-primary" href="#modal" data-bs-toggle="modal">liên hệ ngay</a>
                 </div>
             </div>
         </div>
@@ -408,45 +340,45 @@
     <!-- Executive managers-->
     <section class="novi-background bg-cover section-lg bg-default text-center">
         <div class="container">
-            <h4 class="heading-decorated">Executive managers</h4>
+            <h4 class="heading-decorated">Ban Lãnh Đạo</h4>
             <!-- Owl Carousel-->
             <div class="owl-carousel offset-top-1" data-items="1" data-sm-items="2" data-md-items="2" data-lg-items="3" data-xl-items="3" data-dots="true" data-nav="false" data-stage-padding="15" data-margin="30" data-mouse-drag="false" data-autoplay="true">
-                <article class="thumb-flat"><img class="thumb-flat__image" src="images/calvin-fitzerald-418x415.jpg" alt="" width="418" height="415"/>
+                <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset('theme/images/calvin-fitzerald-418x415.jpg') }}" alt="" width="418" height="415"/>
                     <div class="thumb-flat__body">
                         <p class="heading-6"><a href="#">Calvin Fitzgerald</a></p>
                         <p class="thumb-flat__subtitle">President</p>
                         <p>Calvin Fitzgerald is an established and well-respected expert in the construction industry. With more than 35 years of practical experience in the business, Calvin has built his career on bringing the most outlandish conceptual visions from blueprints to a street next to yours... His leadership skills cemented Constructo's dominating positions among our competitors.</p>
                     </div>
                 </article>
-                <article class="thumb-flat"><img class="thumb-flat__image" src="images/taylor-wilson-418x415.jpg" alt="" width="418" height="415"/>
+                <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset('theme/images/taylor-wilson-418x415.jpg') }}" alt="" width="418" height="415"/>
                     <div class="thumb-flat__body">
                         <p class="heading-6"><a href="#">Taylor Wilson</a></p>
                         <p class="thumb-flat__subtitle">Chief Executive Officer</p>
                         <p>Taylor's been involved in the construction business since the 1970's... His profound experience in building miscellaneous types of projects and his innovative mindset makes him the leading force in our company. The BIM and Db methods that he implemented are now the lynchpins of our business operations with all of our clients...</p>
                     </div>
                 </article>
-                <article class="thumb-flat"><img class="thumb-flat__image" src="images/josh-wagner-418x415.jpg" alt="" width="418" height="415"/>
+                <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset('theme/images/josh-wagner-418x415.jpg') }}" alt="" width="418" height="415"/>
                     <div class="thumb-flat__body">
                         <p class="heading-6"><a href="#">Josh Wagner</a></p>
                         <p class="thumb-flat__subtitle">Chief Design Officer</p>
                         <p>Josh leads our creative team of designers and engineers...His proven ability to manage the most complex projects and bring the craziest concepts to life is what makes him as efficient as he is. Together, this creative team can be the launchpad of any project, giving it a head start at the earliest stages of the construction project's planning.</p>
                     </div>
                 </article>
-                <article class="thumb-flat"><img class="thumb-flat__image" src="images/luis-maxwell-418x415.jpg" alt="" width="418" height="415"/>
+                <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset('theme/images/luis-maxwell-418x415.jpg') }}" alt="" width="418" height="415"/>
                     <div class="thumb-flat__body">
                         <p class="heading-6"><a href="#">Luis Maxwell</a></p>
                         <p class="thumb-flat__subtitle">Contractors Operations Head</p>
                         <p>While we do all the pre-construction planning and sketching, scheduling and managing on an in-house basis, we hire a lot of 3rd party contractors for the actual on-site work. Luis Maxwell is the person to manage all our contractors across all of our projects being currently in development.</p>
                     </div>
                 </article>
-                <article class="thumb-flat"><img class="thumb-flat__image" src="images/ken-ferguson-418x415.jpg" alt="" width="418" height="415"/>
+                <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset('theme/images/ken-ferguson-418x415.jpg') }}" alt="" width="418" height="415"/>
                     <div class="thumb-flat__body">
                         <p class="heading-6"><a href="#">Ken Ferguson</a></p>
                         <p class="thumb-flat__subtitle">Chief Financial Officer</p>
                         <p>Ken's been working as a chief financial analyst for Bechtel; Fluor Corp.; CB&I and Kiewit Corp. During those years he excelled in this field, efficiently cutting the side expenses that were bringing those top contractors down. Few years ago we managed to get him onboard, and not even a full year later we've had a our returns in a form of an optimized expenses budget!</p>
                     </div>
                 </article>
-                <article class="thumb-flat"><img class="thumb-flat__image" src="images/edward-elliot-418x315.jpg" alt="" width="418" height="315"/>
+                <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset('theme/images/edward-elliot-418x315.jpg') }}" alt="" width="418" height="315"/>
                     <div class="thumb-flat__body">
                         <p class="heading-6"><a href="#">Edward  Elliott</a></p>
                         <p class="thumb-flat__subtitle">Vice President of Operations</p>
@@ -458,7 +390,7 @@
     </section>
 
     <!-- Testimonials-->
-    <section class="section parallax-container" data-parallax-img="{{ asset('theme/project-category-healthcare.jpg') }}" id="testimonials">
+    <section class="section parallax-container" data-parallax-img="{{ asset('theme/images/project-category-healthcare.jpg') }}" id="testimonials">
         <div class="parallax-content">
             <section class="section-lg context-dark">
                 <div class="container">
@@ -466,7 +398,7 @@
                         <div class="col-md-6">
                             <!-- Quote default-->
                             <div class="quote-default quote-default_left">
-                                <div class="quote-default__image"><img src="{{ asset('theme/deborah-quagmire-120x120.jpg') }}" alt="" width="120" height="120"/>
+                                <div class="quote-default__image"><img src="{{ asset('theme/images/deborah-quagmire-120x120.jpg') }}" alt="" width="120" height="120"/>
                                 </div>
                                 <svg class="quote-default__mark" version="1.1" baseprofile="tiny" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30.234px" height="23.484px" viewbox="0 0 30.234 23.484" xml:space="preserve">
                       <g>
@@ -482,7 +414,7 @@
                         <div class="col-md-6">
                             <!-- Quote default-->
                             <div class="quote-default quote-default_left">
-                                <div class="quote-default__image"><img src="{{ asset('theme/benedict-arnold-120x120.jpg') }}" alt="" width="120" height="120"/>
+                                <div class="quote-default__image"><img src="{{ asset('theme/images/benedict-arnold-120x120.jpg') }}" alt="" width="120" height="120"/>
                                 </div>
                                 <svg class="quote-default__mark" version="1.1" baseprofile="tiny" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30.234px" height="23.484px" viewbox="0 0 30.234 23.484" xml:space="preserve">
                       <g>
@@ -506,13 +438,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h4 class="heading-decorated">Recent News</h4>
+                    <h4 class="heading-decorated">TIN TỨC CHUYÊN NGÀNH</h4>
                 </div>
             </div>
             <div class="row row-60">
                 <div class="col-md-6 col-xl-4">
                     <!-- Post classic-->
-                    <article class="post-classic post-minimal"><img src="{{ asset('theme/home-post-1-418x315.jpg') }}" alt="" width="418" height="315"/>
+                    <article class="post-classic post-minimal"><img src="{{ asset('theme/images/home-post-1-418x315.jpg') }}" alt="" width="418" height="315"/>
                         <div class="post-classic-title">
                             <h6><a href="#">Future proofing hospitals</a></h6>
                         </div>
@@ -527,7 +459,7 @@
                 </div>
                 <div class="col-md-6 col-xl-4">
                     <!-- Post classic-->
-                    <article class="post-classic post-minimal"><img src="{{ asset('theme/home-post-2-418x315.jpg') }}" alt="" width="418" height="315"/>
+                    <article class="post-classic post-minimal"><img src="{{ asset('theme/images/home-post-2-418x315.jpg') }}" alt="" width="418" height="315"/>
                         <div class="post-classic-title">
                             <h6><a href="#">Bike parts warehouse, DE</a></h6>
                         </div>
@@ -542,7 +474,7 @@
                 </div>
                 <div class="col-md-6 col-xl-4">
                     <!-- Post classic-->
-                    <article class="post-classic post-minimal"><img src="{{ asset('theme/home-post-3-418x315.jpg') }}" alt="" width="418" height="315"/>
+                    <article class="post-classic post-minimal"><img src="{{ asset('theme/images/home-post-3-418x315.jpg') }}" alt="" width="418" height="315"/>
                         <div class="post-classic-title">
                             <h6><a href="#">Joy Hotel & Casino</a></h6>
                         </div>
@@ -564,63 +496,100 @@
         <div class="container">
             <div class="row row-50">
                 <div class="col-md-5 col-lg-4">
-                    <h4 class="heading-decorated">Contact Details</h4>
+                    <h4 class="heading-decorated">Thông tin liên lạc</h4>
                     <ul class="list-sm contact-info">
                         <li>
                             <dl class="list-terms-inline">
-                                <dt>Address</dt>
-                                <dd>4578 Marmora Road, Glasgow, D04 89GR</dd>
+                                <dt>Địa chỉ</dt>
+                                <dd>@lang('contact-info.address')</dd>
                             </dl>
                         </li>
                         <li>
                             <dl class="list-terms-inline">
-                                <dt>Phones</dt>
+                                <dt>Điện thoại</dt>
                                 <dd>
                                     <ul class="list-semicolon">
-                                        <li><a href="tel:#">(800) 123-0045</a></li>
-                                        <li><a href="tel:#">(800) 123-0045</a></li>
+                                        <li><a href="tel:@lang('contact-info.phone1')">@lang('contact-info.phone1')</a></li>
+                                        <li><a href="tel:@lang('contact-info.phone2')">@lang('contact-info.phone2')</a></li>
                                     </ul>
                                 </dd>
                             </dl>
                         </li>
                         <li>
                             <dl class="list-terms-inline">
-                                <dt>We are open</dt>
-                                <dd>Mn-Fr: 10 am-8 pm</dd>
+                                <dt>Giờ làm việc</dt>
+                                <dd>Thứ Hai - Thứ Bảy: 08:00 - 18:00</dd>
                             </dl>
                         </li>
                         <li>
                             <ul class="list-inline-sm">
                                 <li><a class="icon-sm fa-facebook novi-icon icon" href="#"></a></li>
-                                <li><a class="icon-sm fa-twitter novi-icon icon" href="#"></a></li>
-                                <li><a class="icon-sm fa-google-plus novi-icon icon" href="#"></a></li>
-                                <li><a class="icon-sm fa-vimeo novi-icon icon" href="#"></a></li>
+{{--                                <li><a class="icon-sm fa-twitter novi-icon icon" href="#"></a></li>--}}
+{{--                                <li><a class="icon-sm fa-google-plus novi-icon icon" href="#"></a></li>--}}
+{{--                                <li><a class="icon-sm fa-vimeo novi-icon icon" href="#"></a></li>--}}
                                 <li><a class="icon-sm fa-youtube novi-icon icon" href="#"></a></li>
-                                <li><a class="icon-sm fa-pinterest-p novi-icon icon" href="#"></a></li>
+{{--                                <li><a class="icon-sm fa-pinterest-p novi-icon icon" href="#"></a></li>--}}
                             </ul>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <h4 class="heading-decorated">Get in Touch</h4>
+                    <h4 class="heading-decorated">Gửi câu hỏi cho chúng tôi</h4>
                     <!-- RD Mailform-->
                     <form class="rd-mailform rd-mailform_style-1" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                         <div class="form-wrap form-wrap_icon">
                             <input class="form-input" id="contact-name" type="text" name="name">
-                            <label class="form-label" for="contact-name">Your name</label><span class="icon novi-icon linearicons-man"></span>
+                            <label class="form-label" for="contact-name">Tên của bạn</label><span class="icon novi-icon linearicons-man"></span>
                         </div>
                         <div class="form-wrap form-wrap_icon">
                             <input class="form-input" id="contact-email" type="email" name="email">
-                            <label class="form-label" for="contact-email">Your e-mail</label><span class="icon novi-icon linearicons-envelope"></span>
+                            <label class="form-label" for="contact-email">Email liên lạc</label><span class="icon novi-icon linearicons-envelope"></span>
                         </div>
                         <div class="form-wrap form-wrap_icon">
                             <textarea class="form-input" id="contact-message" name="message"></textarea>
-                            <label class="form-label" for="contact-message">Your message</label><span class="icon novi-icon linearicons-feather"></span>
+                            <label class="form-label" for="contact-message">Nội dung</label><span class="icon novi-icon linearicons-feather"></span>
                         </div>
-                        <button class="button button-primary" type="submit">send</button>
+                        <button class="button button-primary" type="submit">Gửi</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal-->
+    <div class="modal" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Liên hệ với chúng tôi</h4>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- RD Mailform-->
+                    <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact"
+                          method="post" action="bat/rd-mailform.php">
+                        <div class="form-wrap">
+                            <label class="form-label" for="contact-name1">Tên</label>
+                            <input class="form-input" id="contact-name1" type="text" name="name">
+                        </div>
+                        <div class="form-wrap">
+                            <label class="form-label" for="contact-phone1">Điện thoại</label>
+                            <input class="form-input" id="contact-phone1" type="text" name="phone">
+                        </div>
+                        <div class="form-wrap">
+                            <label class="form-label" for="contact-email1">E-Mail</label>
+                            <input class="form-input" id="contact-email1" type="email" name="email">
+                        </div>
+                        <div class="form-wrap">
+                            <label class="form-label" for="contact-message1">Nội dung liên hệ</label>
+                            <textarea class="form-input" id="contact-message1" name="message"></textarea>
+                        </div>
+                        <div class="form-wrap form-button group-sm text-center text-lg-left">
+                            <button class="button button-primary" type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

@@ -69,9 +69,20 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'user_has_roles');
     }
 
-    public function isAdmin(): bool
+    public function hasAdministrativeAccess(): bool
     {
         return $this->roles->count() > 0;
+    }
+
+    public function isSuperAdmin(): bool
+    {
+        foreach ($this->roles as $role) {
+            if ($role->id === 'super-admin') {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function assignRole(string $roleName): static
