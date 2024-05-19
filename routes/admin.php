@@ -9,5 +9,6 @@ Route::get('/', [DashboardController::class, 'index'])
 
 Route::resources([
     'services' => ServiceController::class,
+    'projects' => ServiceController::class,
     'project-categories' => ProjectCategoryController::class,
 ]);

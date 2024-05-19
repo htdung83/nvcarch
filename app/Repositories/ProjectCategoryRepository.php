@@ -2,15 +2,15 @@
 
 namespace App\Repositories;
 
-use App\Models\Service;
+use App\Models\ProjectCategory;
 use App\Traits\ModelHasPositionTrait;
 
-class ServiceRepository extends AbstractRepository
+class ProjectCategoryRepository extends AbstractRepository
 {
     use ModelHasPositionTrait;
 
     public function __construct()
     {
-        parent::__construct(Service::class);
+        parent::__construct(ProjectCategory::class);
     }
 }

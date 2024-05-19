@@ -55,6 +55,11 @@
 <!-- Javascript-->
 <script src="{{ asset('theme/js/core.min.js') }}"></script>
 <script src="{{ asset('theme/js/script.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $(".toast").toast('show');
+    });
+</script>
 <!-- coded by barber-->
 </body>
 </html>

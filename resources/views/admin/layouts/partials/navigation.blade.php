@@ -7,8 +7,8 @@
             Dự án
         </a>
         <ul class="rd-navbar-dropdown">
-            <li><a href="{{ route('admin.services.index') }}" title="Dịch vụ">Danh sách</a></li>
-            <li><a href="#" title="Phân loại Dịch vụ">Phân loại</a></li>
+            <li><a href="#" title="Dịch vụ">Danh sách</a></li>
+            <li><a href="{{ route('admin.project-categories.index') }}" title="Phân loại dự án">Phân loại</a></li>
         </ul>
     </li>
     <li class="rd-navbar--has-dropdown rd-navbar-submenu">

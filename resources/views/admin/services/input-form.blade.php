@@ -3,13 +3,19 @@
 @push('pageTitle','Dịch vụ')
 
 @section('mainContent')
-    <form action="{{ route('admin.services.update', $needle) }}" method="post">
+    <form
+        action="{{ is_null($needle->id) ?  route('admin.project-categories.store') : route('admin.project-categories.update', $needle) }}"
+        method="post">
         @csrf
-        @method('PUT')
+        @if(false === is_null($needle->id))
+            @method('PUT')
+        @endif
 
         <div class="row">
             <div class="col-sm-12 col-lg-4 mx-auto">
-                <h4>Thay đổi</h4>
+                <h4>{{ is_null($needle->id) ? 'Thêm mới' : 'Thay đổi' }}</h4>
+
+                @include('admin.layouts.partials.alerts')
 
                 <div class="mb-2">
                     <label for="name">Biểu tượng</label>
@@ -36,7 +42,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
-                    <a href="{{ \Illuminate\Support\Facades\URL::previous() }}" class="btn btn-outline-secondary px-4">
+                    <a href="{{ $backToListUrl }}" class="btn btn-outline-secondary px-4">
                         <i class="bi bi-arrow-bar-left"></i> THOÁT
                     </a>
 

@@ -4,16 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreOrUpdateServiceRequest;
-use App\Http\Traits\AdminControllerTrait;
 use App\Repositories\ServiceRepository;
+use App\Traits\AdminControllerTrait;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     use AdminControllerTrait;
 
-    public function __construct(protected ServiceRepository $serviceRepository)
-    {
+    public function __construct(
+        protected ServiceRepository $repository
+    ) {
     }
 
     public function getModuleName(): string
@@ -25,7 +26,7 @@ class ServiceController extends Controller
     {
         $this->rememberCurrentUrl();
 
-        $list = $this->serviceRepository->search($request->all());
+        $list = $this->repository->search($request->all());
 
         return view('admin.services.list')
             ->with('list', $list);
@@ -33,15 +34,24 @@ class ServiceController extends Controller
 
     public function create()
     {
-        $nextPosition = $this->serviceRepository->getNextPosition();
+        $nextPosition = $this->repository->getNextPosition();
 
-        return view('admin.services.create', ['nextPosition' => $nextPosition]);
+        $needle = $this->repository->model();
+
+        return view(
+            'admin.services.input-form',
+            [
+                'nextPosition' => $nextPosition,
+                'needle' => $needle,
+                'backToListUrl' => $this->getBackToListUrl()
+            ]
+        );
     }
 
     public function store(StoreOrUpdateServiceRequest $request)
     {
         try {
-            $this->serviceRepository->create($request->validated());
+            $this->repository->create($request->validated());
 
             return $this->redirectListWithSuccessMessage();
         } catch (\Throwable $e) {
@@ -51,21 +61,27 @@ class ServiceController extends Controller
 
     public function edit(int $id)
     {
-        $needle = $this->serviceRepository->findOrThrowException($id);
+        $needle = $this->repository->findOrThrowException($id);
 
-        return view('admin.services.edit', ['needle' => $needle]);
+        return view(
+            'admin.services.input-form',
+            [
+                'needle' => $needle,
+                'backToListUrl' => $this->getBackToListUrl()
+            ]
+        );
     }
 
     public function update(StoreOrUpdateServiceRequest $request, int $id)
     {
-        $this->serviceRepository->update($id, $request->validated());
+        $this->repository->update($id, $request->validated());
 
         return $this->redirectListWithSuccessMessage();
     }
 
     public function destroy(int $id)
     {
-        $this->serviceRepository->delete($id);
+        $this->repository->delete($id);
 
         return $this->redirectListWithSuccessMessage("Xóa dữ liệu thành công!");
     }

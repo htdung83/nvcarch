@@ -41,9 +41,14 @@
                     <td class="text-center">{{ $row->position }}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="#" class="btn btn-sm btn-warning">Sửa</a>
+                            <a href="{{ route('admin.services.edit', $row) }}" class="btn btn-sm btn-warning">Sửa</a>
                             @IsSuperAdmin
-                            <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                            <a href="#" class="btn btn-sm btn-danger"
+                               data-bs-target="#delete{{ $row->id }}Modal"
+                               data-bs-toggle="modal"
+                            >Xóa</a>
+                            <!-- Delete Modal -->
+                            @include('admin.services.modal-delete', ['item' => $row])
                             @endIsSuperAdmin
                         </div>
                     </td>

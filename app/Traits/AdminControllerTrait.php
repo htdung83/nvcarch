@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Traits;
+namespace App\Traits;
 
 trait AdminControllerTrait
 {
@@ -23,8 +23,19 @@ trait AdminControllerTrait
 
     public function rememberCurrentUrl(): void
     {
-        $currentUrl = request()->fullUrl();
+        session([$this->getBackToListUrlSessionName() => request()->fullUrl()]);
+    }
 
-        session('backToListUrl', $currentUrl);
+    public function getBackToListUrlSessionName(): string
+    {
+        return $this->getModuleName() . '_backToListUrl';
+    }
+
+    public function getBackToListUrl(): string
+    {
+        return session(
+            $this->getBackToListUrlSessionName(),
+            route('admin.project-categories.index')
+        );
     }
 }
