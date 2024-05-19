@@ -62,42 +62,6 @@
             </div>
         </div>
     </footer>
-    <!-- Modal-->
-    <div class="modal" id="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Contact US</h4>
-                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- RD Mailform-->
-                    <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact"
-                          method="post" action="bat/rd-mailform.php">
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-name1">Name</label>
-                            <input class="form-input" id="contact-name1" type="text" name="name">
-                        </div>
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-phone1">Phone</label>
-                            <input class="form-input" id="contact-phone1" type="text" name="phone">
-                        </div>
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-email1">E-Mail</label>
-                            <input class="form-input" id="contact-email1" type="email" name="email">
-                        </div>
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-message1">Message</label>
-                            <textarea class="form-input" id="contact-message1" name="message"></textarea>
-                        </div>
-                        <div class="form-wrap form-button group-sm text-center text-lg-left">
-                            <button class="button button-primary" type="submit">Send</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>
