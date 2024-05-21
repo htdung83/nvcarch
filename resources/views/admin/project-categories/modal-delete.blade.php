@@ -9,7 +9,7 @@
                 <p>Loại dự án <span class="fw-bold text-danger">{{ $item->name }}</span> sẽ bị xóa và không hiển thị trên web nữa.</p>
                 <p>Bạn có muốn tiếp tục?</p>
             </div>
-            <form action="{{ route('admin.services.destroy', $item) }}" method="post">
+            <form action="{{ route('admin.project-categories.destroy', $item) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <div class="modal-footer justify-content-between">

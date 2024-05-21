@@ -50,8 +50,8 @@ class FortifyServiceProvider extends ServiceProvider
             new class implements LoginResponse {
                 public function toResponse($request): RedirectResponse
                 {
-                    if ($request->user()->isAdmin()) {
-                        return redirect()->intended(route('admin.dashboard'));
+                    if ($request->user()->hasAdministrativeAccess()) {
+                        return redirect()->route('admin.dashboard');
                     }
 
                     return redirect()->intended();

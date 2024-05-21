@@ -11,11 +11,19 @@ class Project extends Model
 
     protected $fillable = [
         'name',
+        'slug',
         'description',
+        'content',
+        'enabled',
+        'project_category_id',
     ];
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(ProjectCategory::class);
+        return $this->belongsTo(
+            ProjectCategory::class,
+            'project_category_id'
+        )
+            ->withDefault(['name' => '- n/a -']);
     }
 }

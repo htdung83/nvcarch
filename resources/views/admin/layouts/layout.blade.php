@@ -12,11 +12,11 @@
     <!-- Stylesheets-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('theme/icons/font/bootstrap-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('theme/css/fonts.css') }}">
-    <link rel="stylesheet" href="{{ asset('theme/css/style.css') }}">
+    <link rel="stylesheet" id="ckEditorContentCss" href="{{ asset('theme/css/style.css') }}">
     <style>.ie-panel {
             display: none;
             background: #212121;
@@ -30,18 +30,21 @@
 
         html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {
             display: block;
-        }</style>
+        }
+        .cke_contents.cke_reset img {max-width: 100% !important;}
+    </style>
+    @stack('extraCss')
 </head>
 <body>
-<div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img
-            src="{{ asset('theme/images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820"
-            alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
-</div>
-<div class="preloader">
-    <div class="cssload-container">
-        <div class="cssload-speeding-wheel"></div>
-    </div>
-</div>
+{{--<div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img--}}
+{{--            src="{{ asset('theme/images/ie8-panel/warning_bar_0000_us.jpg') }}" height="42" width="820"--}}
+{{--            alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>--}}
+{{--</div>--}}
+{{--<div class="preloader">--}}
+{{--    <div class="cssload-container">--}}
+{{--        <div class="cssload-speeding-wheel"></div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- Page-->
 <div class="page">
     @include('admin.layouts.partials.header')
@@ -53,13 +56,15 @@
 <!-- Global Mailform Output-->
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
+<script src="{{ asset('theme/js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ asset('theme/js/core.min.js') }}"></script>
 <script src="{{ asset('theme/js/script.js') }}"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(".toast").toast('show');
     });
 </script>
+@stack('extraJs')
 <!-- coded by barber-->
 </body>
 </html>

@@ -74,4 +74,11 @@ class ProjectCategoryController extends Controller
 
         return $this->redirectListWithSuccessMessage();
     }
+
+    public function destroy(int $id)
+    {
+        $this->repository->delete($id);
+
+        return $this->redirectListWithSuccessMessage("Xóa dữ liệu thành công!");
+    }
 }

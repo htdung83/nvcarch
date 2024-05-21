@@ -9,7 +9,6 @@ class AbstractRepository implements RepositoryInterface
 {
     public function __construct(protected string $modelClassName)
     {
-
     }
 
     public function model(): Model
@@ -33,9 +32,13 @@ class AbstractRepository implements RepositoryInterface
         return $this->model()->create($validatedData);
     }
 
-    public function search(array $queries = [], array $orderBy = [], int $page = 0, int $size = 20): iterable
+    public function search(array $queries = [], array $orderBy = [], array|string $relationships = [], int $page = 0, int $size = 20): iterable
     {
         $list = $this->model()->query();
+
+        if (!empty($relationships)) {
+            $list->with($relationships);
+        }
 
         if ($page > 0) {
             return $list->paginate($size);
