@@ -4,7 +4,7 @@
 
 @section('mainContent')
     <form
-        action="{{ is_null($needle->id) ?  route('admin.project-categories.store') : route('admin.project-categories.update', $needle) }}"
+        action="{{ is_null($needle->id) ?  route('admin.services.store') : route('admin.services.update', $needle) }}"
         method="post">
         @csrf
         @if(false === is_null($needle->id))
