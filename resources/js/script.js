@@ -89,7 +89,7 @@
 				}
 			});
 		}
-		
+
 		// Material Parallax
 		if (plugins.materialParallax.length) {
 			if (!isNoviBuilder && !isIE && !isMobile) {
@@ -97,7 +97,7 @@
 			} else {
 				for (let i = 0; i < plugins.materialParallax.length; i++) {
 					let $parallax = $(plugins.materialParallax[i]);
-					
+
 					$parallax.addClass('parallax-disabled');
 					$parallax.css({"background-image": 'url(' + $parallax.data("parallax-img") + ')'});
 				}
@@ -110,7 +110,7 @@
 	 */
 	$(function () {
 		var isNoviBuilder = window.xMode;
-		
+
 		/**
 		 * Wrapper to eliminate json errors
 		 * @param {string} str - JSON string
@@ -125,7 +125,7 @@
 				return {};
 			}
 		}
-		
+
 		/**
 		 * @desc Sets the actual previous index based on the position of the slide in the markup. Should be the most recent action.
 		 * @param {object} swiper - swiper instance
@@ -134,20 +134,20 @@
 			let element = swiper.$wrapperEl[0].children[swiper.activeIndex];
 			swiper.realPrevious = Array.prototype.indexOf.call(element.parentNode.children, element);
 		}
-		
+
 		/**
 		 * @desc Sets slides background images from attribute 'data-slide-bg'
 		 * @param {object} swiper - swiper instance
 		 */
 		function setBackgrounds(swiper) {
 			let swipersBg = swiper.el.querySelectorAll('[data-slide-bg]');
-			
+
 			for (let i = 0; i < swipersBg.length; i++) {
 				let swiperBg = swipersBg[i];
 				swiperBg.style.backgroundImage = 'url(' + swiperBg.getAttribute('data-slide-bg') + ')';
 			}
 		}
-		
+
 		/**
 		 * @desc Animate captions on active slides
 		 * @param {object} swiper - swiper instance
@@ -181,15 +181,15 @@
 						}
 					}
 				};
-			
+
 			// Caption parameters
 			swiper.params.caption = {
 				animationEvent: 'slideChangeTransitionEnd'
 			};
-			
+
 			initializeAnimation(swiper.$wrapperEl[0].querySelectorAll('[data-caption-animate]'));
 			finalizeAnimation(swiper.$wrapperEl[0].children[swiper.activeIndex].querySelectorAll('[data-caption-animate]'));
-			
+
 			if (swiper.params.caption.animationEvent === 'slideChangeTransitionEnd') {
 				swiper.on(swiper.params.caption.animationEvent, function () {
 					initializeAnimation(swiper.$wrapperEl[0].children[swiper.previousIndex].querySelectorAll('[data-caption-animate]'));
@@ -199,7 +199,7 @@
 				swiper.on('slideChangeTransitionEnd', function () {
 					initializeAnimation(swiper.$wrapperEl[0].children[swiper.previousIndex].querySelectorAll('[data-caption-animate]'));
 				});
-				
+
 				swiper.on(swiper.params.caption.animationEvent, function () {
 					finalizeAnimation(swiper.$wrapperEl[0].children[swiper.activeIndex].querySelectorAll('[data-caption-animate]'));
 				});
@@ -686,12 +686,12 @@
 				document.body.className += ' ' + plugins.rdNavbar.attr("data-body-class");
 			}
 		}
-		
+
 		// Swiper
 		if (plugins.swiper.length) {
-			
+
 			for (let i = 0; i < plugins.swiper.length; i++) {
-				
+
 				let
 					node = plugins.swiper[i],
 					params = parseJSON(node.getAttribute('data-swiper')),
@@ -715,20 +715,20 @@
 						loop:          false,
 						simulateTouch: false
 					};
-				
+
 				params.on = {
 					init: function () {
 						setBackgrounds(this);
 						setRealPrevious(this);
 						initCaptionAnimate(this);
-						
+
 						// Real Previous Index must be set recent
 						this.on('slideChangeTransitionEnd', function () {
 							setRealPrevious(this);
 						});
 					}
 				};
-				
+
 				new Swiper( node, Util.merge( isNoviBuilder ? [ defaults, params, xMode ] : [ defaults, params ] ) );
 			}
 		}
@@ -905,7 +905,7 @@
 				});
 			}
 		}
-		
+
 		// Counter
 		if (plugins.counter) {
 			for (let i = 0; i < plugins.counter.length; i++) {
@@ -925,7 +925,7 @@
 						this.counter.params.to = parseInt(this.textContent, 10);
 						this.counter.run();
 					}).bind(node);
-				
+
 				if (isNoviBuilder) {
 					node.counter.run();
 					node.addEventListener('blur', blurHandler);

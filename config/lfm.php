@@ -51,8 +51,8 @@ return [
             'startup_view' => 'list',
             'max_size'     => 50000, // size in KB
             'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
+            'thumb_width' => 120,
+            'thumb_height' => 120,
             'valid_mime'   => [
                 'image/jpeg',
                 'image/pjpeg',
@@ -67,8 +67,8 @@ return [
             'startup_view' => 'grid',
             'max_size'     => 500, // size in KB
             'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
+            'thumb_width' => 120,
+            'thumb_height' => 120,
             'valid_mime'   => [
                 'image/jpeg',
                 'image/pjpeg',
@@ -81,13 +81,24 @@ return [
             'startup_view' => 'grid',
             'max_size'     => 50000, // size in KB
             'thumb' => true,
-            'thumb_width' => 80,
-            'thumb_height' => 80,
+            'thumb_width' => 120,
+            'thumb_height' => 120,
             'valid_mime'   => [
                 'image/jpeg',
                 'image/pjpeg',
                 'image/png',
                 'image/gif',
+            ],
+        ],
+        'about' => [
+            'folder_name'  => 'about-us',
+            'startup_view' => 'grid',
+            'max_size'     => 200, // size in KB
+            'thumb' => false,
+            'thumb_width' => 120,
+            'thumb_height' => 120,
+            'valid_mime'   => [
+                'image/jpeg'
             ],
         ],
     ],
@@ -108,7 +119,7 @@ return [
     |--------------------------------------------------------------------------
      */
 
-    'disk'                     => 'public',
+    'disk'                     => 'uploads',
 
     'rename_file'              => false,
 

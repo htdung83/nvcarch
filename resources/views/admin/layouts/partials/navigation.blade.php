@@ -1,6 +1,6 @@
 <ul class="rd-navbar-nav">
     <li><a href="{{ route('web.home') }}" target="_blank" title="Trang chủ">Xem Trang chủ</a></li>
-    <li><a href="#" title="Giới thiệu">Giới thiệu</a></li>
+    <li><a href="{{ route('admin.about-us.create') }}" title="Giới thiệu">Giới thiệu</a></li>
     <li><a href="{{ route('admin.services.index') }}" title="Dịch vụ">Dịch vụ</a></li>
     <li class="rd-navbar--has-dropdown rd-navbar-submenu">
         <a href="#" title="Dự án">

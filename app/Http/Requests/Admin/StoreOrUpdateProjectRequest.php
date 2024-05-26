@@ -39,8 +39,9 @@ class StoreOrUpdateProjectRequest extends FormRequest
             $content = str_replace(
                 [
                     'https://x3.com.vn/wp-content/uploads',
-                    env('APP_URL') . '//storage',
-                    env('APP_URL') . '/storage',
+                    config('app.url') . '/uploads/projects',
+                    config('app.url') . '/storage',
+                    config('app.url') . 'storage',
                 ],
                 '/project-assets',
                 $content

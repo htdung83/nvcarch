@@ -53,19 +53,21 @@
     </section>
 
     <!-- Our History-->
+    @isset($aboutUs)
     <section class="novi-background bg-cover section-md bg-gray-lighter" id="about">
         <div class="container">
             <div class="row justify-content-md-center row-30 row-md-50">
                 <div class="col-md-11 col-lg-10 col-xl-6">
-                    <h4 class="heading-decorated">@lang('home-page.about-us.title')</h4>
-                    <p class="heading-6 text-width-1">@lang('home-page.about-us.headline')</p>
-                    <p>@lang('home-page.about-us.description')</p><a class="button button-primary" href="#contacts">LIÊN HỆ NGAY</a>
+                    <h4 class="heading-decorated">{{ $aboutUs->title }}</h4>
+                    <p class="heading-6 text-width-1">{{ $aboutUs->headline }}</p>
+                    <p>{{ $aboutUs->content }}</p><a class="button button-primary" href="#contacts">LIÊN HỆ NGAY</a>
                 </div>
-                <div class="col-md-11 col-lg-10 col-xl-6"><img src="{{ asset('theme/images/home-1-652x491.jpg') }}" alt="" width="652" height="491"/>
+                <div class="col-md-11 col-lg-10 col-xl-6"><img src="{{ asset($aboutUs->img_url) }}" alt="" width="652" height="491"/>
                 </div>
             </div>
         </div>
     </section>
+    @endisset
 
     <section class="section bg-gray-dark parallax-container" data-parallax-img="{{ asset('theme/images/slider-slide-1-1920x1080.jpg') }}">
         <div class="parallax-content">
@@ -76,18 +78,18 @@
                             <!-- Box counter-->
                             <article class="box-counter">
                                 <div class="box-counter__wrap">
-                                    <div class="counter">250</div>
+                                    <div class="counter">{{ $statistic['projects'] }}</div>
                                 </div>
-                                <p class="box-counter__title">Projects Completed</p>
+                                <p class="box-counter__title">Dự án</p>
                             </article>
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <!-- Box counter-->
                             <article class="box-counter">
                                 <div class="box-counter__wrap">
-                                    <div class="counter">302</div>
+                                    <div class="counter">{{ $statistic['staff'] }}</div>
                                 </div>
-                                <p class="box-counter__title">Staff members</p>
+                                <p class="box-counter__title">Đội ngũ</p>
                             </article>
                         </div>
                         <div class="col-md-6 col-lg-3">

@@ -29,22 +29,6 @@ class ProjectController extends Controller
     {
         $this->rememberCurrentUrl();
 
-        $allProjects = Project::all();
-
-        foreach ($allProjects as $project) {
-            $project->content = str_replace(
-                [
-                    'https://x3.com.vn/wp-content/uploads',
-                    env('APP_URL') . '//storage',
-                    env('APP_URL') . '/storage',
-                ],
-                '/project-assets',
-                $project->content
-            );
-
-            $project->save();
-        }
-
         $list = $this->repository->search(
             queries: $request->all(),
             orderBy: ['id' => 'desc'],
