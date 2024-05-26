@@ -13,7 +13,7 @@
                             <div class="row justify-content-lg-center">
                                 <div class="col-lg-10">
                                     <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall" data-caption-delay="0">Construction</h1>
-                                    <h4 class="text-boxed" data-caption-animate="fadeInUpSmall" data-caption-delay="200">See how a 10-stories TOWER IS  being built, in a time-lapse!</h4><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="#modal" data-bs-toggle="modal">Contact Us</a>
+                                    <h4 class="text-boxed" data-caption-animate="fadeInUpSmall" data-caption-delay="200">See how a 10-stories TOWER IS  being built, in a time-lapse!</h4><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                             <div class="row justify-content-lg-center">
                                 <div class="col-lg-10">
                                     <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall" data-caption-delay="0">Discounts</h1>
-                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">Summer discounts for big construction projects!</h4><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="#modal" data-bs-toggle="modal">Contact Us</a>
+                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">Summer discounts for big construction projects!</h4><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                             <div class="row justify-content-lg-center">
                                 <div class="col-lg-10">
                                     <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall" data-caption-delay="0">Projects</h1>
-                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">This year we took more complex constructions than ever before...</h4><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="#modal" data-bs-toggle="modal">Contact Us</a>
+                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">This year we took more complex constructions than ever before...</h4><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                 <div class="col-md-11 col-lg-10 col-xl-6">
                     <h4 class="heading-decorated">@lang('home-page.about-us.title')</h4>
                     <p class="heading-6 text-width-1">@lang('home-page.about-us.headline')</p>
-                    <p>@lang('home-page.about-us.description')</p><a class="button button-primary" href="#modal" data-bs-toggle="modal">LIÊN HỆ NGAY</a>
+                    <p>@lang('home-page.about-us.description')</p><a class="button button-primary" href="#contacts">LIÊN HỆ NGAY</a>
                 </div>
                 <div class="col-md-11 col-lg-10 col-xl-6"><img src="{{ asset('theme/images/home-1-652x491.jpg') }}" alt="" width="652" height="491"/>
                 </div>
@@ -123,90 +123,106 @@
                 </div>
             </div>
             <div class="row row-50 justify-content-md-center justify-content-lg-start">
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler"></span></div>
+                @foreach($serviceList as $service)
+                    <div class="col-md-6 col-xl-4">
+                        <!-- Blurb circle-->
+                        <article class="blurb blurb-circle">
+                            <div class="unit flex-sm-row unit-spacing-md">
+                                <div class="unit__left">
+                                    <div class="blurb-circle__icon"><span class="icon novi-icon novi-background {{ $service->icon }}"></span></div>
+                                </div>
+                                <div class="unit__body">
+                                    <p class="heading-6 blurb__title"><a href="#">{{ $service->name }}</a></p>
+                                    <p>{{ $service->description }}</p>
+                                </div>
                             </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Tư vấn Thiết kế</a></p>
-                                <p>Đội ngũ chuyên gia có tâm, có tầm mang đến sự tư vấn tỉ mỉ nhất. Khách hàng sẽ có được thiết kế tối ưu về mỹ thuật, kỹ thuật cũng như về hiệu quả kinh tế.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-users"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Thiết kế kiến trúc</a></p>
-                                <p>Ý tưởng của chúng tôi luôn phối hợp hài hòa giữa lợi ích của khách hàng nhưng vẫn đáp ứng tốt nhất nhu cầu của con người: tiện dụng, hiệu quả, có tính thẩm mỹ cao.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-wall"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Thiết kế nội thất</a></p>
-                                <p>Our customers love the pace/quality tempo that we show during each of the principal construction processes!</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-apartment"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Thi công</a></p>
-                                <p>Construction project management is essential. We're using the most time and iterations efficient life cycles methods for that.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-home4"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Sản xuất nội thất</a></p>
-                                <p>Oftentimes physical and functional essence of any construction project needs to be represented digitally, in a 3D model format.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Blurb circle-->
-                    <article class="blurb blurb-circle">
-                        <div class="unit flex-sm-row unit-spacing-md">
-                            <div class="unit__left">
-                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler2"></span></div>
-                            </div>
-                            <div class="unit__body">
-                                <p class="heading-6 blurb__title"><a href="#">Thương mại vật liệu</a></p>
-                                <p>Luôn đi tiên phong trong việc áp dụng công nghệ mới, chúng tôi sử dụng vật liệu có khả năng thích ứng cao ngay cả với môi trường thi công phức tạp, được sự chấp thuận và đánh giá tích cực của thị trường.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                @endforeach
+{{--                <div class="col-md-6 col-xl-4">--}}
+{{--                    <!-- Blurb circle-->--}}
+{{--                    <article class="blurb blurb-circle">--}}
+{{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
+{{--                            <div class="unit__left">--}}
+{{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler"></span></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="unit__body">--}}
+{{--                                <p class="heading-6 blurb__title"><a href="#">Tư vấn Thiết kế</a></p>--}}
+{{--                                <p>Đội ngũ chuyên gia có tâm, có tầm mang đến sự tư vấn tỉ mỉ nhất. Khách hàng sẽ có được thiết kế tối ưu về mỹ thuật, kỹ thuật cũng như về hiệu quả kinh tế.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-xl-4">--}}
+{{--                    <!-- Blurb circle-->--}}
+{{--                    <article class="blurb blurb-circle">--}}
+{{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
+{{--                            <div class="unit__left">--}}
+{{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-users"></span></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="unit__body">--}}
+{{--                                <p class="heading-6 blurb__title"><a href="#">Thiết kế kiến trúc</a></p>--}}
+{{--                                <p>Ý tưởng của chúng tôi luôn phối hợp hài hòa giữa lợi ích của khách hàng nhưng vẫn đáp ứng tốt nhất nhu cầu của con người: tiện dụng, hiệu quả, có tính thẩm mỹ cao.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-xl-4">--}}
+{{--                    <!-- Blurb circle-->--}}
+{{--                    <article class="blurb blurb-circle">--}}
+{{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
+{{--                            <div class="unit__left">--}}
+{{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-wall"></span></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="unit__body">--}}
+{{--                                <p class="heading-6 blurb__title"><a href="#">Thiết kế nội thất</a></p>--}}
+{{--                                <p>Our customers love the pace/quality tempo that we show during each of the principal construction processes!</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-xl-4">--}}
+{{--                    <!-- Blurb circle-->--}}
+{{--                    <article class="blurb blurb-circle">--}}
+{{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
+{{--                            <div class="unit__left">--}}
+{{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-apartment"></span></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="unit__body">--}}
+{{--                                <p class="heading-6 blurb__title"><a href="#">Thi công</a></p>--}}
+{{--                                <p>Construction project management is essential. We're using the most time and iterations efficient life cycles methods for that.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-xl-4">--}}
+{{--                    <!-- Blurb circle-->--}}
+{{--                    <article class="blurb blurb-circle">--}}
+{{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
+{{--                            <div class="unit__left">--}}
+{{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-home4"></span></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="unit__body">--}}
+{{--                                <p class="heading-6 blurb__title"><a href="#">Sản xuất nội thất</a></p>--}}
+{{--                                <p>Oftentimes physical and functional essence of any construction project needs to be represented digitally, in a 3D model format.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-xl-4">--}}
+{{--                    <!-- Blurb circle-->--}}
+{{--                    <article class="blurb blurb-circle">--}}
+{{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
+{{--                            <div class="unit__left">--}}
+{{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler2"></span></div>--}}
+{{--                            </div>--}}
+{{--                            <div class="unit__body">--}}
+{{--                                <p class="heading-6 blurb__title"><a href="#">Thương mại vật liệu</a></p>--}}
+{{--                                <p>Luôn đi tiên phong trong việc áp dụng công nghệ mới, chúng tôi sử dụng vật liệu có khả năng thích ứng cao ngay cả với môi trường thi công phức tạp, được sự chấp thuận và đánh giá tích cực của thị trường.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -215,7 +231,9 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-md-11 col-lg-9 col-xl-8">
-                    <h4 class="heading-decorated">IF YOU CAN ENVISION IT, THEN WE CAN BUILD IT! <br class="d-none d-lg-inline"> TELL US MORE ABOUT YOUR PROJECT</h4><a class="button button-primary" href="#modal" data-bs-toggle="modal">Contact Us</a>
+                    <h3 class="heading-decorated">ĐẸP BẢN VẼ - VỮNG CÔNG TRÌNH!</h3>
+                    <p class="h5">Chỉ cần biết mong muốn của bạn, chúng tôi có thể mang đến một công trình mãn nhãn.</p>
+                    <a class="button button-primary" href="#contacts">Liên Hệ Ngay</a>
                 </div>
             </div>
         </div>
