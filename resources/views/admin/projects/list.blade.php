@@ -7,14 +7,15 @@
 
     <div class="table-responsive">
         @IsSuperAdmin
-        <div class="mb-3">
-            <a href="{{ route('admin.projects.create') }}" class="btn btn-success btn-sm">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <form action="{{ request()->url() }}" method="GET" class="d-flex align-items-center px-2 py-1 border border-3 rounded-3 w-100 w-lg-25">
+                <span class="bi bi-search"></span>
+                <input type="text" name="keywords" value="{{ old('keywords') }}" placeholder="Nhập từ khóa ..." class="form-control border-0 shadow-none" autofocus>
+            </form>
+
+            <a href="{{ route('admin.projects.create') }}" class="btn btn-success rounded-pill text-nowrap">
                 <i class="bi bi-plus-circle"></i> Thêm mới
             </a>
-
-            @if ($list->total() > 0)
-                {{ $list->links() }}
-            @endif
         </div>
         @endIsSuperAdmin
 
@@ -66,5 +67,11 @@
             @endforelse
             </tbody>
         </table>
+
+        <div class="pb-3">
+            @if ($list->total() > 0)
+                {{ $list->links() }}
+            @endif
+        </div>
     </div>
 @endsection
