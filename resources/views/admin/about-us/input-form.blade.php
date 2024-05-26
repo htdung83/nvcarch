@@ -41,12 +41,6 @@
                 </div>
             </div>
             <div class="col-sm-12 col-lg-6">
-{{--                <div class="mb-2">--}}
-{{--                    <label for="img_url">Hình ảnh</label>--}}
-{{--                    <input type="text" id="img_url" name="img_url" value="{{ old('img_url', $needle->img_url) }}"--}}
-{{--                           class="form-control"/>--}}
-{{--                </div>--}}
-
                 <div class="mb-2">
                     <img id="holder" src="{{ asset(old('img_url', $needle->img_url ?? 'theme/images/img-unavailable.jpg')) }}" class="img-fluid" alt="Preview">
                     <div class="input-group">
@@ -54,13 +48,13 @@
                         <input id="img_url" class="form-control" type="text" name="img_url" value="{{ asset(old('img_url', $needle->img_url ?? 'theme/images/img-unavailable.jpg')) }}" placeholder="Chọn đường dẫn hình">
                     </div>
                 </div>
+                <div class="text-muted text-center">(Kích thước: 650 x 491 px)</div>
             </div>
         </div>
     </form>
 @endsection
 
 @push('extraJs')
-
     <script>
         $('#lfm').filemanager("{{ route('unisharp.lfm.show') }}", "about");
     </script>

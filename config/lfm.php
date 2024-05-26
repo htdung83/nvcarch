@@ -101,6 +101,17 @@ return [
                 'image/jpeg'
             ],
         ],
+        'projectCategory' => [
+            'folder_name'  => 'project-categories',
+            'startup_view' => 'grid',
+            'max_size'     => 200, // size in KB
+            'thumb' => false,
+            'thumb_width' => 120,
+            'thumb_height' => 120,
+            'valid_mime'   => [
+                'image/jpeg'
+            ],
+        ],
     ],
 
     /*

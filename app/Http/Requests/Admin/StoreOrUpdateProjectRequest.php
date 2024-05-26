@@ -2,11 +2,14 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Traits\UtilsTrait;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 
 class StoreOrUpdateProjectRequest extends FormRequest
 {
+    use UtilsTrait;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -33,20 +36,7 @@ class StoreOrUpdateProjectRequest extends FormRequest
 
     public function prepareForValidation(): void
     {
-        $content = $this->input('content');
-
-        if ('' !== $content) {
-            $content = str_replace(
-                [
-                    'https://x3.com.vn/wp-content/uploads',
-                    config('app.url') . '/uploads/projects',
-                    config('app.url') . '/storage',
-                    config('app.url') . 'storage',
-                ],
-                '/project-assets',
-                $content
-            );
-        }
+        $content = $this->removeRootDomainIn($this->input('content'));
 
         $this->merge([
             'slug' => Str::slug($this->input('name')),

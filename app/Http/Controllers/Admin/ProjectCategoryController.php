@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreOrUpdateProjectCategoryRequest;
-use App\Models\ProjectCategory;
 use App\Repositories\ProjectCategoryRepository;
 use App\Traits\AdminControllerTrait;
 use Illuminate\Http\Request;

@@ -22,6 +22,7 @@
                 <th scope="col">STT</th>
                 <th scope="col">TÊN GỌI</th>
                 <th scope="col">MÔ TẢ</th>
+                <th scope="col" class="text-nowrap">HÌNH ĐẠI DIỆN</th>
                 <th scope="col" class="text-nowrap">THỨ TỰ</th>
                 <th scope="col"><i class="bi bi-list"></i></th>
             </tr>
@@ -32,6 +33,9 @@
                     <th scope="row">{{ $row->id }}</th>
                     <td class="text-nowrap">{{ $row->name }}</td>
                     <td>{{ $row->description }}</td>
+                    <td class="text-center">
+                        <img src="{{ asset($row->img_url ? : 'theme/images/img-unavailable.jpg') }}" alt="{{ $row->name }}" class="img-fluid" style="width: 120px;">
+                    </td>
                     <td class="text-center">{{ $row->position }}</td>
                     <td>
                         <div class="btn-group">

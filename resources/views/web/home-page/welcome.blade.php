@@ -250,14 +250,14 @@
                     <div class="thumb-creative">
                         <div class="thumb-creative__inner">
                             <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image" src="images/project-1-480x361.jpg" alt="" width="480" height="361"/>
+                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image" src="{{ asset('theme/images/project-1-480x361.jpg') }}" alt="" width="480" height="361"/>
                                 </figure>
                                 <div class="thumb-creative__content">
                                     <h6>COMMERCIAL</h6>
                                 </div>
                             </div>
                             <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image" src="images/project-1-480x361.jpg" alt="" width="480" height="361"/>
+                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image" src="{{ asset('theme/images/project-1-480x361.jpg') }}" alt="" width="480" height="361"/>
                                 </figure>
                                 <div class="thumb-creative__content">
                                     <h6 class="thumb-creative__title"><a href="#">COMMERCIAL</a></h6>

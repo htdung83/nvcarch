@@ -13,6 +13,7 @@ class ProjectCategory extends Model
         'name',
         'slug',
         'description',
+        'img_url',
         'position',
         'enabled'
     ];

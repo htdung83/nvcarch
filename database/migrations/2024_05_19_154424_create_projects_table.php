@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('slug', 255);
+            $table->string('img_url', 255)->nullable();
             $table->tinyInteger('position')->default(0);
             $table->tinyInteger('enabled')->default(0);
             $table->timestamps();

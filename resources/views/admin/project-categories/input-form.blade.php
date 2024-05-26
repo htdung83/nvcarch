@@ -7,16 +7,21 @@
         action="{{ is_null($needle->id) ?  route('admin.project-categories.store') : route('admin.project-categories.update', $needle) }}"
         method="post">
         @csrf
+
         @if(false === is_null($needle->id))
             @method('PUT')
         @endif
 
         <div class="row">
-            <div class="col-sm-12 col-lg-4 mx-auto">
+            <div class="col-sm-12 col-lg-8 mx-auto">
                 <h4>{{ is_null($needle->id) ? 'Thêm mới' : 'Thay đổi' }}</h4>
 
                 @include('admin.layouts.partials.alerts')
+            </div>
+        </div>
 
+        <div class="row mt-3">
+            <div class="col-sm-12 col-lg-4 ms-auto">
                 <div class="mb-2">
                     <label for="name">Tên gọi</label>
                     <input type="text" id="name" name="name" value="{{ old('name', $needle->name) }}"
@@ -49,6 +54,22 @@
                     </button>
                 </div>
             </div>
+            <div class="col-sm-12 col-lg-4 me-auto">
+                <div class="mb-2">
+                    <img id="holder" src="{{ asset(old('img_url', $needle->img_url ?? 'theme/images/img-unavailable.jpg')) }}" class="img-fluid" alt="Preview">
+                    <div class="input-group">
+                        <span class="input-group-btn"><a id="lfm" data-input="img_url" data-preview="holder" class="btn btn-primary text-white"><i class="bi bi-images"></i> Chọn file</a></span>
+                        <input id="img_url" class="form-control" type="text" name="img_url" value="{{ old('img_url', $needle->img_url) != '' ? asset(old('img_url', $needle->img_url)) : '' }}" placeholder="Hình đại diện">
+                    </div>
+                </div>
+                <div class="text-muted text-center">(Kích thước: 480 x 361 px)</div>
+            </div>
         </div>
     </form>
 @endsection
+
+@push('extraJs')
+    <script>
+        $('#lfm').filemanager("{{ route('unisharp.lfm.show') }}", "projectCategory");
+    </script>
+@endpush
