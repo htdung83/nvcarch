@@ -16,4 +16,5 @@ Route::resources([
     'project-categories' => ProjectCategoryController::class,
     'about-us' => AboutUsController::class,
     'staff-members' => StaffMemberController::class,
+    'testimonials' => TestimonialController::class,
 ]);

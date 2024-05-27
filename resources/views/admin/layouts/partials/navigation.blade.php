@@ -5,6 +5,7 @@
         <ul class="rd-navbar-dropdown">
             <li><a href="{{ route('admin.about-us.create') }}" title="Giới thiệu">Giới thiệu</a></li>
             <li><a href="{{ route('admin.staff-members.index') }}" title="Ban lãnh đạo">Ban lãnh đạo</a></li>
+            <li><a href="{{ route('admin.testimonials.index') }}" title="Ý kiến khách hàng">Ý kiến khách </a></li>
         </ul>
     </li>
     <li><a href="{{ route('admin.services.index') }}" title="Dịch vụ">Dịch vụ</a></li>

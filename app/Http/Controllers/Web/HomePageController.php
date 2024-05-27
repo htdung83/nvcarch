@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Repositories\ProjectCategoryRepository;
 use App\Repositories\ServiceRepository;
 use App\Repositories\StaffMemberRepository;
+use App\Repositories\TestimonialRepository;
 use Illuminate\Http\Request;
 use Random\RandomException;
 
@@ -17,6 +18,7 @@ class HomePageController extends Controller
         protected ServiceRepository $serviceRepository,
         protected ProjectCategoryRepository $projectRepository,
         protected StaffMemberRepository $staffMemberRepository,
+        protected TestimonialRepository $testimonialRepository,
     )
     {
     }
@@ -37,13 +39,16 @@ class HomePageController extends Controller
 
         $staffMembers = $this->staffMemberRepository->search();
 
+        $testimonials = $this->testimonialRepository->search();
+
         return view(
             'web.home-page.welcome',
             compact(
                 'aboutUs',
                 'serviceList',
                 'statistic',
-                'staffMembers'
+                'staffMembers',
+                'testimonials'
             )
         );
     }
