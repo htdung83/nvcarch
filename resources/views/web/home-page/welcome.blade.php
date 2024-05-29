@@ -8,56 +8,65 @@
         <div class="swiper-container swiper-slider swiper-slider_fullheight bg-gray-dark" data-simulate-touch="false"
              data-loop="true" data-autoplay="4500">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" data-slide-bg="{{ asset('theme/images/parallax-2.jpg') }}">
+                @foreach($bannerList as $banner)
+                <div class="swiper-slide" data-slide-bg="{{ asset($banner->img_url) }}">
                     <div class="swiper-slide-caption text-center">
+                        @if ($banner->head_text != '')
                         <div class="container">
                             <div class="row justify-content-lg-center">
                                 <div class="col-lg-10">
                                     <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"
-                                        data-caption-delay="0">Construction</h1>
+                                        data-caption-delay="0">{{ $banner->head_text }}</h1>
+                                    @if ($banner->highlight_text != '')
                                     <h4 class="text-boxed" data-caption-animate="fadeInUpSmall"
                                         data-caption-delay="200">See how a 10-stories TOWER IS being built, in a
-                                        time-lapse!</h4><a class="button button-primary"
+                                        time-lapse!</h4>
+                                    @endif
+                                    @if ($banner->button_url != '')
+                                    <a class="button button-primary"
                                                            data-caption-animate="fadeInUpSmall" data-caption-delay="350"
-                                                           href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>
+                                                           href="#contacts" data-bs-toggle="modal">Liên Hệ Ngay</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
-                <div class="swiper-slide text-center" data-slide-bg="{{ asset('theme/images/parallax-1.jpg') }}">
-                    <div class="swiper-slide-caption">
-                        <div class="container">
-                            <div class="row justify-content-lg-center">
-                                <div class="col-lg-10">
-                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"
-                                        data-caption-delay="0">Discounts</h1>
-                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">Summer discounts
-                                        for big construction projects!</h4><a class="button button-primary"
-                                                                              data-caption-animate="fadeInUpSmall"
-                                                                              data-caption-delay="350" href="#modal"
-                                                                              data-bs-toggle="modal">Liên Hệ Ngay</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide text-center" data-slide-bg="{{ asset('theme/images/parallax-3.jpg') }}">
-                    <div class="swiper-slide-caption">
-                        <div class="container">
-                            <div class="row justify-content-lg-center">
-                                <div class="col-lg-10">
-                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"
-                                        data-caption-delay="0">Projects</h1>
-                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">This year we took
-                                        more complex constructions than ever before...</h4><a
-                                        class="button button-primary" data-caption-animate="fadeInUpSmall"
-                                        data-caption-delay="350" href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+{{--                <div class="swiper-slide text-center" data-slide-bg="{{ asset('theme/images/parallax-1.jpg') }}">--}}
+{{--                    <div class="swiper-slide-caption">--}}
+{{--                        <div class="container">--}}
+{{--                            <div class="row justify-content-lg-center">--}}
+{{--                                <div class="col-lg-10">--}}
+{{--                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"--}}
+{{--                                        data-caption-delay="0">Discounts</h1>--}}
+{{--                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">Summer discounts--}}
+{{--                                        for big construction projects!</h4><a class="button button-primary"--}}
+{{--                                                                              data-caption-animate="fadeInUpSmall"--}}
+{{--                                                                              data-caption-delay="350" href="#modal"--}}
+{{--                                                                              data-bs-toggle="modal">Liên Hệ Ngay</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide text-center" data-slide-bg="{{ asset('theme/images/parallax-3.jpg') }}">--}}
+{{--                    <div class="swiper-slide-caption">--}}
+{{--                        <div class="container">--}}
+{{--                            <div class="row justify-content-lg-center">--}}
+{{--                                <div class="col-lg-10">--}}
+{{--                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"--}}
+{{--                                        data-caption-delay="0">Projects</h1>--}}
+{{--                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">This year we took--}}
+{{--                                        more complex constructions than ever before...</h4><a--}}
+{{--                                        class="button button-primary" data-caption-animate="fadeInUpSmall"--}}
+{{--                                        data-caption-delay="350" href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
             <!-- Swiper Pagination-->
             <div class="swiper-pagination"></div>
@@ -159,90 +168,6 @@
                         </article>
                     </div>
                 @endforeach
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Blurb circle-->--}}
-                {{--                    <article class="blurb blurb-circle">--}}
-                {{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
-                {{--                            <div class="unit__left">--}}
-                {{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler"></span></div>--}}
-                {{--                            </div>--}}
-                {{--                            <div class="unit__body">--}}
-                {{--                                <p class="heading-6 blurb__title"><a href="#">Tư vấn Thiết kế</a></p>--}}
-                {{--                                <p>Đội ngũ chuyên gia có tâm, có tầm mang đến sự tư vấn tỉ mỉ nhất. Khách hàng sẽ có được thiết kế tối ưu về mỹ thuật, kỹ thuật cũng như về hiệu quả kinh tế.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Blurb circle-->--}}
-                {{--                    <article class="blurb blurb-circle">--}}
-                {{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
-                {{--                            <div class="unit__left">--}}
-                {{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-users"></span></div>--}}
-                {{--                            </div>--}}
-                {{--                            <div class="unit__body">--}}
-                {{--                                <p class="heading-6 blurb__title"><a href="#">Thiết kế kiến trúc</a></p>--}}
-                {{--                                <p>Ý tưởng của chúng tôi luôn phối hợp hài hòa giữa lợi ích của khách hàng nhưng vẫn đáp ứng tốt nhất nhu cầu của con người: tiện dụng, hiệu quả, có tính thẩm mỹ cao.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Blurb circle-->--}}
-                {{--                    <article class="blurb blurb-circle">--}}
-                {{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
-                {{--                            <div class="unit__left">--}}
-                {{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-wall"></span></div>--}}
-                {{--                            </div>--}}
-                {{--                            <div class="unit__body">--}}
-                {{--                                <p class="heading-6 blurb__title"><a href="#">Thiết kế nội thất</a></p>--}}
-                {{--                                <p>Our customers love the pace/quality tempo that we show during each of the principal construction processes!</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Blurb circle-->--}}
-                {{--                    <article class="blurb blurb-circle">--}}
-                {{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
-                {{--                            <div class="unit__left">--}}
-                {{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-apartment"></span></div>--}}
-                {{--                            </div>--}}
-                {{--                            <div class="unit__body">--}}
-                {{--                                <p class="heading-6 blurb__title"><a href="#">Thi công</a></p>--}}
-                {{--                                <p>Construction project management is essential. We're using the most time and iterations efficient life cycles methods for that.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Blurb circle-->--}}
-                {{--                    <article class="blurb blurb-circle">--}}
-                {{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
-                {{--                            <div class="unit__left">--}}
-                {{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-home4"></span></div>--}}
-                {{--                            </div>--}}
-                {{--                            <div class="unit__body">--}}
-                {{--                                <p class="heading-6 blurb__title"><a href="#">Sản xuất nội thất</a></p>--}}
-                {{--                                <p>Oftentimes physical and functional essence of any construction project needs to be represented digitally, in a 3D model format.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Blurb circle-->--}}
-                {{--                    <article class="blurb blurb-circle">--}}
-                {{--                        <div class="unit flex-sm-row unit-spacing-md">--}}
-                {{--                            <div class="unit__left">--}}
-                {{--                                <div class="blurb-circle__icon"><span class="icon novi-icon novi-background linearicons-pencil-ruler2"></span></div>--}}
-                {{--                            </div>--}}
-                {{--                            <div class="unit__body">--}}
-                {{--                                <p class="heading-6 blurb__title"><a href="#">Thương mại vật liệu</a></p>--}}
-                {{--                                <p>Luôn đi tiên phong trong việc áp dụng công nghệ mới, chúng tôi sử dụng vật liệu có khả năng thích ứng cao ngay cả với môi trường thi công phức tạp, được sự chấp thuận và đánh giá tích cực của thị trường.</p>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
             </div>
         </div>
     </section>
@@ -493,7 +418,7 @@
             <div class="owl-carousel offset-top-1" data-items="1" data-sm-items="2" data-md-items="2" data-lg-items="3"
                  data-xl-items="3" data-dots="true" data-nav="false" data-stage-padding="15" data-margin="30"
                  data-mouse-drag="false" data-autoplay="false">
-                @foreach($staffMembers as $staffMember)
+                @foreach($staffMemberList as $staffMember)
                     <article class="thumb-flat"><img class="thumb-flat__image" src="{{ asset($staffMember->img_url) }}"
                                                      alt="" width="418" height="415"/>
                         <div class="thumb-flat__body">
@@ -514,7 +439,7 @@
             <section class="section-lg context-dark">
                 <div class="container">
                     <div class="row row-50">
-                        @foreach($testimonials as $testimonial)
+                        @foreach($testimonialList as $testimonial)
                             <div class="col-md-6">
                                 <!-- Quote default-->
                                 <div class="quote-default quote-default_left">

@@ -17,4 +17,5 @@ Route::resources([
     'about-us' => AboutUsController::class,
     'staff-members' => StaffMemberController::class,
     'testimonials' => TestimonialController::class,
+    'banners' => BannerController::class,
 ]);

@@ -8,7 +8,7 @@
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
                     <div class="rd-navbar-brand">
-                        <h1 class="text-uppercase text-white h3">@stack('pageTitle')</h1>
+                        <h1 class="text-uppercase text-white h4">@stack('pageTitle')</h1>
                     </div>
                 </div>
                 <!-- RD Navbar Nav-->
