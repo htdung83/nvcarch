@@ -3,24 +3,23 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreOrUpdateStaffMemberRequest;
-use App\Models\StaffMember;
-use App\Repositories\StaffMemberRepository;
+use App\Http\Requests\Admin\StoreOrUpdateBannerRequest;
+use App\Repositories\BannerRepository;
 use App\Traits\AdminControllerTrait;
 use Illuminate\Http\Request;
 
-class StaffMemberController extends Controller
+class BannerController extends Controller
 {
     use AdminControllerTrait;
 
     public function __construct(
-        protected StaffMemberRepository $repository
+        protected BannerRepository $repository
     ) {
     }
 
     public function getModuleName(): string
     {
-        return 'admin.staff-members';
+        return 'admin.banners';
     }
 
     public function index(Request $request)
@@ -29,8 +28,7 @@ class StaffMemberController extends Controller
 
         $list = $this->repository->search($request->all());
 
-        return view('admin.staff-members.list')
-            ->with('list', $list);
+        return view($this->getViewNameForList(), ['list' => $list]);
     }
 
     public function create()
@@ -38,10 +36,9 @@ class StaffMemberController extends Controller
         $nextPosition = $this->repository->getNextPosition();
 
         $needle = $this->repository->model();
-        $needle->position = $nextPosition;
 
         return view(
-            'admin.staff-members.input-form',
+            $this->getViewNameForInputForm(),
             [
                 'nextPosition' => $nextPosition,
                 'needle' => $needle,
@@ -50,15 +47,11 @@ class StaffMemberController extends Controller
         );
     }
 
-    public function store(StoreOrUpdateStaffMemberRequest $request)
+    public function store(StoreOrUpdateBannerRequest $request)
     {
-        try {
-            $this->repository->create($request->validated());
+        $this->repository->create($request->validated());
 
-            return $this->redirectListWithSuccessMessage();
-        } catch (\Throwable $e) {
-            return redirect()->back()->withErrors([$e->getMessage()]);
-        }
+        return $this->redirectListWithSuccessMessage();
     }
 
     public function edit(int $id)
@@ -66,7 +59,7 @@ class StaffMemberController extends Controller
         $needle = $this->repository->findOrThrowException($id);
 
         return view(
-            'admin.staff-members.input-form',
+            $this->getViewNameForInputForm(),
             [
                 'needle' => $needle,
                 'backToListUrl' => $this->getBackToListUrl()
@@ -74,13 +67,9 @@ class StaffMemberController extends Controller
         );
     }
 
-    public function update(StoreOrUpdateStaffMemberRequest $request, int $id)
+    public function update(StoreOrUpdateBannerRequest $request, int $id)
     {
-        // $this->repository->update($id, $request->validated());
-
-        $needle = StaffMember::find($id);
-
-        $needle->update($request->validated());
+        $this->repository->update($id, $request->validated());
 
         return $this->redirectListWithSuccessMessage();
     }

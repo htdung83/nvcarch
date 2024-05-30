@@ -49,7 +49,7 @@ return [
         'file'  => [
             'folder_name'  => 'files',
             'startup_view' => 'list',
-            'max_size'     => 50000, // size in KB
+            'max_size'     => 5000, // size in KB
             'thumb' => true,
             'thumb_width' => 120,
             'thumb_height' => 120,
@@ -65,35 +65,31 @@ return [
         'article' => [
             'folder_name'  => 'articles',
             'startup_view' => 'grid',
-            'max_size'     => 500, // size in KB
+            'max_size'     => 200, // size in KB
             'thumb' => true,
             'thumb_width' => 120,
             'thumb_height' => 120,
             'valid_mime'   => [
                 'image/jpeg',
-                'image/pjpeg',
                 'image/png',
-                'image/gif',
             ],
         ],
         'project' => [
             'folder_name'  => 'projects',
             'startup_view' => 'grid',
-            'max_size'     => 50000, // size in KB
+            'max_size'     => 600, // size in KB
             'thumb' => true,
             'thumb_width' => 120,
             'thumb_height' => 120,
             'valid_mime'   => [
                 'image/jpeg',
-                'image/pjpeg',
                 'image/png',
-                'image/gif',
             ],
         ],
         'about' => [
             'folder_name'  => 'about-us',
             'startup_view' => 'grid',
-            'max_size'     => 200, // size in KB
+            'max_size'     => 600, // size in KB
             'thumb' => false,
             'thumb_width' => 120,
             'thumb_height' => 120,

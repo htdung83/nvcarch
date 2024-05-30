@@ -8,7 +8,7 @@ trait AdminControllerTrait
 
     public function redirectListWithSuccessMessage(string $message = null)
     {
-        $url = route("admin.{$this->getModuleName()}.index");
+        $url = route("{$this->getModuleName()}.index");
 
         if (session('backToListUrl')) {
             $url = session('backToListUrl');
@@ -35,7 +35,22 @@ trait AdminControllerTrait
     {
         return session(
             $this->getBackToListUrlSessionName(),
-            route('admin.project-categories.index')
+            route($this->getModuleName() . '.index')
         );
+    }
+
+    public function viewName(string $action): string
+    {
+        return $this->getModuleName() . '.' . $action;
+    }
+
+    public function getViewNameForList(): string
+    {
+        return $this->viewName('list');
+    }
+
+    public function getViewNameForInputForm(): string
+    {
+        return $this->viewName('input-form');
     }
 }
