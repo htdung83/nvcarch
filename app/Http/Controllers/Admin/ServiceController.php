@@ -19,7 +19,7 @@ class ServiceController extends Controller
 
     public function getModuleName(): string
     {
-        return 'services';
+        return 'admin.services';
     }
 
     public function index(Request $request)

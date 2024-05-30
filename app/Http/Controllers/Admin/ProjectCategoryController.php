@@ -19,7 +19,7 @@ class ProjectCategoryController extends Controller
 
     public function getModuleName(): string
     {
-        return 'project-categories';
+        return 'admin.project-categories';
     }
 
     public function index(Request $request)

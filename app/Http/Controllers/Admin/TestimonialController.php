@@ -74,6 +74,6 @@ class TestimonialController extends Controller
 
     public function getModuleName(): string
     {
-        return 'testimonials';
+        return 'admin.testimonials';
     }
 }

@@ -22,7 +22,7 @@ class ProjectController extends Controller
 
     public function getModuleName(): string
     {
-        return 'projects';
+        return 'admin.projects';
     }
 
     public function index(Request $request)
