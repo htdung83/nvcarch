@@ -47,6 +47,7 @@ class UserController extends Controller
             $this->getViewNameForInputForm(),
             [
                 'needle' => $needle,
+                'roles' => $this->getRoleList(),
                 'backToListUrl' => $this->getBackToListUrl()
             ]
         );
@@ -54,7 +55,11 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        $this->userRepository->create($request->validated());
+        $validated = $request->validated();
+
+        $needle = $this->userRepository->create($request->validated());
+
+        $needle->assignRoles($validated['roles']);
 
         return $this->redirectListWithSuccessMessage();
     }
@@ -67,6 +72,7 @@ class UserController extends Controller
             $this->getViewNameForInputForm(),
             [
                 'needle' => $needle,
+                'roles' => $this->getRoleList(),
                 'backToListUrl' => $this->getBackToListUrl()
             ]
         );
@@ -80,7 +86,9 @@ class UserController extends Controller
             unset($validated['password']);
         }
 
-        $this->userRepository->update($id, $validated);
+        $needle = $this->userRepository->update($id, $validated);
+
+        $needle->assignRoles($validated['roles']);
 
         return $this->redirectListWithSuccessMessage();
     }

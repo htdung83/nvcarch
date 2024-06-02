@@ -33,6 +33,19 @@
                 </div>
 
                 <div class="mb-2">
+                    <label>Quyền truy cập</label>
+                    <div class="p-2 rounded-3 border border-1">
+                    @foreach($roles as $role)
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="roles[]" id="role{{$role->id}}"
+                                   value="{{ $role->id }}" @checked($needle->roles->contains($role->id))>
+                            <label class="form-check-label" for="role{{ $role->id }}">{{ $role->name }}</label>
+                        </div>
+                    @endforeach
+                    </div>
+                </div>
+
+                <div class="mb-2">
                     <label>Trạng thái</label>
                     <div>
                         <div class="form-check form-check-inline">

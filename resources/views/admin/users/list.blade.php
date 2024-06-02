@@ -22,6 +22,7 @@
                 <th scope="col">STT</th>
                 <th scope="col">HỌ TÊN</th>
                 <th scope="col">EMAIL</th>
+                <th scope="col">QUYỀN TRUY CẬP</th>
                 <th scope="col" class="text-center">TRẠNG THÁI</th>
                 <th scope="col"><i class="bi bi-list"></i></th>
             </tr>
@@ -32,6 +33,11 @@
                     <th scope="row">{{ $row->id }}</th>
                     <td class="text-nowrap">{{ $row->name }}</td>
                     <td>{{ $row->email }}</td>
+                    <td>
+                        @foreach($row->roles as $role)
+                            <span @class(['badge rounded-pill','bg-secondary' => $role->id === 'editor', 'bg-primary' => in_array($role->id, ['super-admin', 'admin'])])>{{ $role->name }}</span>
+                        @endforeach
+                    </td>
                     <td class="text-center">
                         <span @class([
     'badge rounded-pill',
