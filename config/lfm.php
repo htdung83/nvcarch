@@ -62,10 +62,10 @@ return [
                 'text/plain',
             ],
         ],
-        'article' => [
-            'folder_name'  => 'articles',
+        'post' => [
+            'folder_name'  => 'posts',
             'startup_view' => 'grid',
-            'max_size'     => 200, // size in KB
+            'max_size'     => 500, // size in KB
             'thumb' => true,
             'thumb_width' => 120,
             'thumb_height' => 120,

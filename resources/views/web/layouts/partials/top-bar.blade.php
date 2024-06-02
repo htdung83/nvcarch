@@ -9,6 +9,10 @@
                     </div>
                 </div>
             </li>
+        </ul>
+    </div>
+    <div class="rd-navbar-top-panel__right">
+        <ul class="list-inline-xxs">
             <li>
                 <div class="unit flex-row align-items-center unit-spacing-xs">
                     <div class="unit__left"><span class="icon novi-icon icon-sm icon-primary linearicons-telephone"></span></div>
@@ -20,10 +24,6 @@
                     </div>
                 </div>
             </li>
-        </ul>
-    </div>
-    <div class="rd-navbar-top-panel__right">
-        <ul class="list-inline-xxs">
             <li><a title="NVC Facebook Page" class="icon novi-icon icon-xxs icon-gray-darker fa fa-facebook" href="{{ __('FacebookPage') }}"></a></li>
             <li><a title="NVC Youtube Channel" class="icon novi-icon icon-xxs icon-gray-darker fa fa-youtube" href="{{ __('YoutubeChannel') }}"></a></li>
 {{--            <li><a class="icon novi-icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a></li>--}}

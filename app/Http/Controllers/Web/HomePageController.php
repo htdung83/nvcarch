@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
+use App\Models\Post;
 use App\Models\Project;
 use App\Repositories\BannerRepository;
 use App\Repositories\ProjectCategoryRepository;
@@ -54,6 +55,8 @@ class HomePageController extends Controller
             return $this->testimonialRepository->search();
         });
 
+        $latestPostList = Post::isEnabled()->latest()->take(3)->get();
+
         return view(
             'web.home-page.welcome',
             compact(
@@ -62,7 +65,8 @@ class HomePageController extends Controller
                 'serviceList',
                 'statistic',
                 'staffMemberList',
-                'testimonialList'
+                'testimonialList',
+                'latestPostList'
             )
         );
     }

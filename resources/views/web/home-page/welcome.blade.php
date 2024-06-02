@@ -9,64 +9,33 @@
              data-loop="true" data-autoplay="4500">
             <div class="swiper-wrapper">
                 @foreach($bannerList as $banner)
-                <div class="swiper-slide" data-slide-bg="{{ asset($banner->img_url) }}">
-                    <div class="swiper-slide-caption text-center">
-                        @if ($banner->head_text != '')
-                        <div class="container">
-                            <div class="row justify-content-lg-center">
-                                <div class="col-lg-10">
-                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"
-                                        data-caption-delay="0">{{ $banner->head_text }}</h1>
-                                    @if ($banner->highlight_text != '')
-                                    <h4 class="text-boxed" data-caption-animate="fadeInUpSmall"
-                                        data-caption-delay="200">See how a 10-stories TOWER IS being built, in a
-                                        time-lapse!</h4>
-                                    @endif
-                                    @if ($banner->button_url != '')
-                                    <a class="button button-primary"
-                                                           data-caption-animate="fadeInUpSmall" data-caption-delay="350"
-                                                           href="#contacts" data-bs-toggle="modal">Liên Hệ Ngay</a>
-                                    @endif
+                    <div class="swiper-slide" data-slide-bg="{{ asset($banner->img_url) }}">
+                        <div class="swiper-slide-caption text-center">
+                            @if ($banner->head_text != '')
+                                <div class="container">
+                                    <div class="row justify-content-lg-center">
+                                        <div class="col-lg-10">
+                                            <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"
+                                                data-caption-delay="0">{{ $banner->head_text }}</h1>
+                                            @if ($banner->highlight_text != '')
+                                                <h4 class="text-boxed" data-caption-animate="fadeInUpSmall"
+                                                    data-caption-delay="200">See how a 10-stories TOWER IS being built,
+                                                    in a
+                                                    time-lapse!</h4>
+                                            @endif
+                                            @if ($banner->button_url != '')
+                                                <a class="button button-primary"
+                                                   data-caption-animate="fadeInUpSmall"
+                                                   data-caption-delay="350"
+                                                   href="#contacts">Liên Hệ Ngay</a>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
-                        @endif
                     </div>
-                </div>
                 @endforeach
-{{--                <div class="swiper-slide text-center" data-slide-bg="{{ asset('theme/images/parallax-1.jpg') }}">--}}
-{{--                    <div class="swiper-slide-caption">--}}
-{{--                        <div class="container">--}}
-{{--                            <div class="row justify-content-lg-center">--}}
-{{--                                <div class="col-lg-10">--}}
-{{--                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"--}}
-{{--                                        data-caption-delay="0">Discounts</h1>--}}
-{{--                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">Summer discounts--}}
-{{--                                        for big construction projects!</h4><a class="button button-primary"--}}
-{{--                                                                              data-caption-animate="fadeInUpSmall"--}}
-{{--                                                                              data-caption-delay="350" href="#modal"--}}
-{{--                                                                              data-bs-toggle="modal">Liên Hệ Ngay</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="swiper-slide text-center" data-slide-bg="{{ asset('theme/images/parallax-3.jpg') }}">--}}
-{{--                    <div class="swiper-slide-caption">--}}
-{{--                        <div class="container">--}}
-{{--                            <div class="row justify-content-lg-center">--}}
-{{--                                <div class="col-lg-10">--}}
-{{--                                    <h1 class="heading-decorated" data-caption-animate="fadeInUpSmall"--}}
-{{--                                        data-caption-delay="0">Projects</h1>--}}
-{{--                                    <h4 data-caption-animate="fadeInUpSmall" data-caption-delay="200">This year we took--}}
-{{--                                        more complex constructions than ever before...</h4><a--}}
-{{--                                        class="button button-primary" data-caption-animate="fadeInUpSmall"--}}
-{{--                                        data-caption-delay="350" href="#modal" data-bs-toggle="modal">Liên Hệ Ngay</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
             <!-- Swiper Pagination-->
             <div class="swiper-pagination"></div>
@@ -82,7 +51,7 @@
             <div class="container">
                 <div class="row justify-content-md-center row-30 row-md-50">
                     <div class="col-md-11 col-lg-10 col-xl-6">
-                        <h4 class="heading-decorated">{{ $aboutUs->title }}</h4>
+                        <h4 class="heading-decorated yellow-decorated">{{ $aboutUs->title }}</h4>
                         <p class="heading-6 text-width-1">{{ $aboutUs->headline }}</p>
                         <p>{{ $aboutUs->content }}</p><a class="button button-primary" href="#contacts">LIÊN HỆ NGAY</a>
                     </div>
@@ -147,7 +116,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="heading-decorated">DỊCH VỤ CỦA CHÚNG TÔI</h4>
+                    <h4 class="heading-decorated yellow-decorated">DỊCH VỤ CỦA CHÚNG TÔI</h4>
                 </div>
             </div>
             <div class="row row-50 justify-content-md-center justify-content-lg-start">
@@ -413,7 +382,7 @@
     <!-- Executive managers-->
     <section class="novi-background bg-cover section-lg bg-default text-center">
         <div class="container">
-            <h4 class="heading-decorated">Ban Lãnh Đạo</h4>
+            <h4 class="heading-decorated yellow-decorated">Ban Lãnh Đạo</h4>
             <!-- Owl Carousel-->
             <div class="owl-carousel offset-top-1" data-items="1" data-sm-items="2" data-md-items="2" data-lg-items="3"
                  data-xl-items="3" data-dots="true" data-nav="false" data-stage-padding="15" data-margin="30"
@@ -473,64 +442,73 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h4 class="heading-decorated">TIN TỨC CHUYÊN NGÀNH</h4>
+                    <h4 class="heading-decorated yellow-decorated">TIN TỨC CHUYÊN NGÀNH</h4>
                 </div>
             </div>
             <div class="row row-60">
-                <div class="col-md-6 col-xl-4">
-                    <!-- Post classic-->
-                    <article class="post-classic post-minimal"><img
-                            src="{{ asset('theme/images/home-post-1-418x315.jpg') }}" alt="" width="418" height="315"/>
-                        <div class="post-classic-title">
-                            <h6><a href="#">Future proofing hospitals</a></h6>
-                        </div>
-                        <div class="post-meta">
-                            <div class="group"><a href="#">
-                                    <time datetime="2021">Jan.20, 2021</time>
-                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>
-                        </div>
-                        <div class="post-classic-body">
-                            <p>By improving the physical layout of hospitals and medical facilities, we can enhance and
-                                increase safety mechanisms, improve care, and…</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Post classic-->
-                    <article class="post-classic post-minimal"><img
-                            src="{{ asset('theme/images/home-post-2-418x315.jpg') }}" alt="" width="418" height="315"/>
-                        <div class="post-classic-title">
-                            <h6><a href="#">Bike parts warehouse, DE</a></h6>
-                        </div>
-                        <div class="post-meta">
-                            <div class="group"><a href="#">
-                                    <time datetime="2021">Jan.20, 2021</time>
-                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>
-                        </div>
-                        <div class="post-classic-body">
-                            <p>Delaware proved to be a very friendly place to work at… While invited there for
-                                completing a mid-sized warehouse for…</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <!-- Post classic-->
-                    <article class="post-classic post-minimal"><img
-                            src="{{ asset('theme/images/home-post-3-418x315.jpg') }}" alt="" width="418" height="315"/>
-                        <div class="post-classic-title">
-                            <h6><a href="#">Joy Hotel & Casino</a></h6>
-                        </div>
-                        <div class="post-meta">
-                            <div class="group"><a href="#">
-                                    <time datetime="2021">Jan.20, 2021</time>
-                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>
-                        </div>
-                        <div class="post-classic-body">
-                            <p>This hotel & casino complex is our most recent completed building… The whole structure
-                                that took us 6 months to…</p>
-                        </div>
-                    </article>
-                </div>
+                @foreach($latestPostList as $post)
+                    <div class="col-md-6 col-xl-4">
+                        <!-- Post classic-->
+                        <article class="post-classic post-minimal">
+                            <img
+                                src="{{ asset($post->img_url == "" ? 'theme/images/img-unavailable.jpg' : $post->img_url) }}"
+                                alt="{{ $post->title }}"
+                                width="418"
+                                height="315"
+                                style="aspect-ratio: 418/315;"
+                            />
+                            <div class="post-classic-title">
+                                <h6><a href="#">{{ $post->title }}</a></h6>
+                            </div>
+                            <div class="post-meta">
+                                <div class="group">
+                                    <a href="#">
+                                        <time datetime="2021">{{ $post->created_at->format('d/m/Y') }}</time>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-classic-body">
+                                <p>{{ $post->description }}</p>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
+                {{--                <div class="col-md-6 col-xl-4">--}}
+                {{--                    <!-- Post classic-->--}}
+                {{--                    <article class="post-classic post-minimal"><img--}}
+                {{--                            src="{{ asset('theme/images/home-post-2-418x315.jpg') }}" alt="" width="418" height="315"/>--}}
+                {{--                        <div class="post-classic-title">--}}
+                {{--                            <h6><a href="#">Bike parts warehouse, DE</a></h6>--}}
+                {{--                        </div>--}}
+                {{--                        <div class="post-meta">--}}
+                {{--                            <div class="group"><a href="#">--}}
+                {{--                                    <time datetime="2021">Jan.20, 2021</time>--}}
+                {{--                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>--}}
+                {{--                        </div>--}}
+                {{--                        <div class="post-classic-body">--}}
+                {{--                            <p>Delaware proved to be a very friendly place to work at… While invited there for--}}
+                {{--                                completing a mid-sized warehouse for…</p>--}}
+                {{--                        </div>--}}
+                {{--                    </article>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-md-6 col-xl-4">--}}
+                {{--                    <!-- Post classic-->--}}
+                {{--                    <article class="post-classic post-minimal"><img--}}
+                {{--                            src="{{ asset('theme/images/home-post-3-418x315.jpg') }}" alt="" width="418" height="315"/>--}}
+                {{--                        <div class="post-classic-title">--}}
+                {{--                            <h6><a href="#">Joy Hotel & Casino</a></h6>--}}
+                {{--                        </div>--}}
+                {{--                        <div class="post-meta">--}}
+                {{--                            <div class="group"><a href="#">--}}
+                {{--                                    <time datetime="2021">Jan.20, 2021</time>--}}
+                {{--                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>--}}
+                {{--                        </div>--}}
+                {{--                        <div class="post-classic-body">--}}
+                {{--                            <p>This hotel & casino complex is our most recent completed building… The whole structure--}}
+                {{--                                that took us 6 months to…</p>--}}
+                {{--                        </div>--}}
+                {{--                    </article>--}}
+                {{--                </div>--}}
             </div>
         </div>
     </section>
@@ -540,7 +518,7 @@
         <div class="container">
             <div class="row row-50">
                 <div class="col-md-5 col-lg-4">
-                    <h4 class="heading-decorated">Thông tin liên lạc</h4>
+                    <h4 class="heading-decorated yellow-decorated">Thông tin liên lạc</h4>
                     <ul class="list-sm contact-info">
                         <li>
                             <dl class="list-terms-inline">
@@ -580,7 +558,7 @@
                     </ul>
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <h4 class="heading-decorated">Gửi câu hỏi cho chúng tôi</h4>
+                    <h4 class="heading-decorated yellow-decorated">Gửi câu hỏi cho chúng tôi</h4>
                     <!-- RD Mailform-->
                     <form class="rd-mailform rd-mailform_style-1" data-form-output="form-output-global"
                           data-form-type="contact" method="post" action="bat/rd-mailform.php">

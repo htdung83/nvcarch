@@ -18,4 +18,6 @@ Route::resources([
     'staff-members' => StaffMemberController::class,
     'testimonials' => TestimonialController::class,
     'banners' => BannerController::class,
+    'post-categories' => PostCategoryController::class,
+    'posts' => PostController::class,
 ]);

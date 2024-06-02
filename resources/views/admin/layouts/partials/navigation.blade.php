@@ -1,6 +1,13 @@
 <ul class="rd-navbar-nav">
     <li><a href="{{ route('web.home') }}" target="_blank" title="Trang chủ">Xem Trang chủ</a></li>
-    <li><a href="{{ route('admin.banners.index') }}" title="Banner Trang chủ">Banner Trang chủ</a></li>
+    <li class="rd-navbar--has-dropdown rd-navbar-submenu">
+        <a href="#" title="Banner Trang chủ">Tin tức - Hình ảnh</a>
+        <ul class="rd-navbar-dropdown">
+            <li><a href="{{ route('admin.banners.index') }}" title="Banner Trang chủ">Banner Trang chủ</a></li>
+            <li><a href="{{ route('admin.post-categories.index') }}" title="Chủ đề tin">Chủ đề tin</a></li>
+            <li><a href="{{ route('admin.posts.index') }}" title="Tin tức">Tin tức</a></li>
+        </ul>
+    </li>
     <li class="rd-navbar--has-dropdown rd-navbar-submenu">
         <a href="#" title="Thông tin Công ty">Thông tin Công ty</a>
         <ul class="rd-navbar-dropdown">
@@ -25,7 +32,7 @@
         </a>
         <ul class="rd-navbar-dropdown">
             <li><a href="#"
-                   onclick="javascript: document.getElementById('logoutForm').submit(); return false;">Thoát</a></li>
+                   onclick="document.getElementById('logoutForm').submit(); return false;">Thoát</a></li>
         </ul>
     </li>
 </ul>

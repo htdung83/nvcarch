@@ -15,8 +15,8 @@
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
                     <div class="rd-navbar-brand">
-                        <a class="brand-name rounded-3 bg-white p-2" href="{{ url('/') }}" title="{{ config('app.name') }}">
-                            <img src="{{ asset('theme/images/logo.jpg') }}" alt="{{ config('app.name') }}"/>
+                        <a class="brand-name rounded-3 bg-white p-1" href="{{ url('/') }}" title="{{ config('app.name') }}">
+                            <img src="{{ asset('theme/images/logo-387x100.jpg') }}" alt="{{ config('app.name') }}" style="max-height: 75px;"/>
                         </a>
                     </div>
                 </div>

@@ -20,4 +20,22 @@ trait UtilsTrait
             $value
         );
     }
+
+    public function extractNumberOfChar(string $value, int $length): string
+    {
+        $text = strip_tags($value);
+
+        $text = substr($text, 0, $length);
+
+        $lastSpace = strrpos($text, ' ');
+
+        return substr($text, 0, $lastSpace);
+    }
+
+    public function extractFirstImageSrcIn(string $htmlEncodedContent): ?string
+    {
+        preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $htmlEncodedContent, $image);
+
+        return $image['src'] ?? null;
+    }
 }
