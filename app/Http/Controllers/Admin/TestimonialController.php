@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 class TestimonialController extends Controller
 {
     use AdminControllerTrait;
+
     public function __construct(
         protected TestimonialRepository $repository
     ) {

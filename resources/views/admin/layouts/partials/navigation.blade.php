@@ -28,11 +28,18 @@
     </li>
     <li class="rd-navbar--has-dropdown rd-navbar-submenu">
         <a href="#" title="Tài khoản">
-            Tài khoản
+            {{ auth()->user()->name }}
         </a>
         <ul class="rd-navbar-dropdown">
-            <li><a href="#"
-                   onclick="document.getElementById('logoutForm').submit(); return false;">Thoát</a></li>
+            @if(auth()->user()->isSuperAdmin())
+            <li>
+                <a href="{{ route('admin.users.index') }}">Quản lý Người dùng</a>
+            </li>
+            @endif
+            <li>
+                <a href="#"
+                   onclick="document.getElementById('logoutForm').submit(); return false;">Thoát</a>
+            </li>
         </ul>
     </li>
 </ul>

@@ -27,7 +27,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
+        'enabled',
     ];
 
     /**
@@ -85,14 +87,14 @@ class User extends Authenticatable
         return false;
     }
 
-    public function assignRole(string $roleName): static
+    public function assignRoles(string|array $roleNames): void
     {
-        $role = Role::find($roleName);
-
-        if ($role) {
-            $this->roles()->attach($role->id);
+        if (!is_array($roleNames)) {
+            $roleNames = [$roleNames];
         }
 
-        return $this;
+        $roles = Role::whereIn('id', $roleNames)->pluck('id')->toArray();
+
+        $this->roles()->sync($roles);
     }
 }

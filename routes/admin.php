@@ -20,4 +20,5 @@ Route::resources([
     'banners' => BannerController::class,
     'post-categories' => PostCategoryController::class,
     'posts' => PostController::class,
+    'users' => UserController::class,
 ]);
