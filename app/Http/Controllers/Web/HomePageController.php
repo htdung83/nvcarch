@@ -18,7 +18,7 @@ class HomePageController extends Controller
 {
     public function __construct(
         protected ServiceRepository $serviceRepository,
-        protected ProjectCategoryRepository $projectRepository,
+        protected ProjectCategoryRepository $projectCategoryRepository,
         protected StaffMemberRepository $staffMemberRepository,
         protected TestimonialRepository $testimonialRepository,
         protected BannerRepository $bannerRepository,
@@ -55,6 +55,10 @@ class HomePageController extends Controller
             return $this->testimonialRepository->search();
         });
 
+        $projectCategoryList = cache()->rememberForever('cachedProjectCategoryList', function () {
+            return $this->projectCategoryRepository->search(orderBy: ['position' => 'ASC']);
+        });
+
         $latestPostList = Post::isEnabled()->latest()->take(3)->get();
 
         return view(
@@ -65,6 +69,7 @@ class HomePageController extends Controller
                 'serviceList',
                 'statistic',
                 'staffMemberList',
+                'projectCategoryList',
                 'testimonialList',
                 'latestPostList'
             )

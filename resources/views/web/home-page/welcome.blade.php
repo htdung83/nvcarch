@@ -157,224 +157,228 @@
     <section class="novi-background bg-cover bg-default" id="projects">
         <div class="container-fluid container-flex">
             <div class="row g-0">
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="{{ asset('theme/images/project-1-480x361.jpg') }}"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>COMMERCIAL</h6>
+                @foreach($projectCategoryList as $projectCategory)
+                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                        <!-- Thumb creative-->
+                        <div class="thumb-creative">
+                            <div class="thumb-creative__inner">
+                                <div class="thumb-creative__front">
+                                    <figure class="thumb-creative__image-wrap">
+                                        <img class="thumb-creative__image"
+                                             src="{{ asset($projectCategory->img_url) }}"
+                                             alt="" width="480" height="361"/>
+                                    </figure>
+                                    <div class="thumb-creative__content">
+                                        <h6>{{ $projectCategory->name }}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="{{ asset('theme/images/project-1-480x361.jpg') }}"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">COMMERCIAL</a></h6>
-                                    <p>It’s probably the most diverse category of construction to work in. But we’ve got
-                                        experience…</p><a class="button button-link" href="#">View projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-2-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>CULTURAL / LIFESTYLE</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-2-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">CULTURAL / LIFESTYLE</a></h6>
-                                    <p>Working on a socially important building, such as a park involves additional
-                                        landscape construction expertise.…</p><a class="button button-link" href="#">View
-                                        projects</a>
+                                <div class="thumb-creative__back">
+                                    <figure class="thumb-creative__image-wrap">
+                                        <img class="thumb-creative__image"
+                                             src="{{ asset($projectCategory->img_url) }}"
+                                             alt="" width="480" height="361"/>
+                                    </figure>
+                                    <div class="thumb-creative__content">
+                                        <h6 class="thumb-creative__title"><a href="#">{{ $projectCategory->name }}</a></h6>
+                                        <p>{{ $projectCategory->description }}</p>
+                                        <a class="button button-link" href="#">Dự án đã thực hiện</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-3-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>DATA / TECHNOLOGY</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-3-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">DATA / TECHNOLOGY</a></h6>
-                                    <p>While constructing a headquarters building for an IT company is relatively easy,
-                                        we’ve also…</p><a class="button button-link" href="#">View projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-4-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>EDUCATIONAL</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-4-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">EDUCATIONAL</a></h6>
-                                    <p>Educational institutions can be much more creative than your regular school or a
-                                        college campus!…</p><a class="button button-link" href="#">View projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-5-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>GOVERNMENT / MILITARY</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-5-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">GOVERNMENT / MILITARY</a></h6>
-                                    <p>The US military and States governments used our expertise and manpower to build
-                                        numerous military-grade…</p><a class="button button-link" href="#">View
-                                        projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-6-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>HEALTHCARE</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-6-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">HEALTHCARE</a></h6>
-                                    <p>We can build any type of healthcare buildings. From a small private medical
-                                        clinic to…</p><a class="button button-link" href="#">View projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-7-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>MANUFACTURING / INDUSTRIAL</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-7-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">MANUFACTURING / INDUSTRIAL</a></h6>
-                                    <p>Building a manufacturing facility or a factory house can be much more challenging
-                                        than building…</p><a class="button button-link" href="#">View projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <!-- Thumb creative-->
-                    <div class="thumb-creative">
-                        <div class="thumb-creative__inner">
-                            <div class="thumb-creative__front">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-8-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6>WAREHOUSE / LOGISTICS</h6>
-                                </div>
-                            </div>
-                            <div class="thumb-creative__back">
-                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"
-                                                                                src="images/project-8-480x361.jpg"
-                                                                                alt="" width="480" height="361"/>
-                                </figure>
-                                <div class="thumb-creative__content">
-                                    <h6 class="thumb-creative__title"><a href="#">WAREHOUSE / LOGISTICS</a></h6>
-                                    <p>While building a warehouse for an e-store is no easy feat itself, think about
-                                        building…</p><a class="button button-link" href="#">View projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-2-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>CULTURAL / LIFESTYLE</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-2-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">CULTURAL / LIFESTYLE</a></h6>--}}
+                {{--                                    <p>Working on a socially important building, such as a park involves additional--}}
+                {{--                                        landscape construction expertise.…</p><a class="button button-link" href="#">View--}}
+                {{--                                        projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-3-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>DATA / TECHNOLOGY</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-3-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">DATA / TECHNOLOGY</a></h6>--}}
+                {{--                                    <p>While constructing a headquarters building for an IT company is relatively easy,--}}
+                {{--                                        we’ve also…</p><a class="button button-link" href="#">View projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-4-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>EDUCATIONAL</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-4-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">EDUCATIONAL</a></h6>--}}
+                {{--                                    <p>Educational institutions can be much more creative than your regular school or a--}}
+                {{--                                        college campus!…</p><a class="button button-link" href="#">View projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-5-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>GOVERNMENT / MILITARY</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-5-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">GOVERNMENT / MILITARY</a></h6>--}}
+                {{--                                    <p>The US military and States governments used our expertise and manpower to build--}}
+                {{--                                        numerous military-grade…</p><a class="button button-link" href="#">View--}}
+                {{--                                        projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-6-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>HEALTHCARE</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-6-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">HEALTHCARE</a></h6>--}}
+                {{--                                    <p>We can build any type of healthcare buildings. From a small private medical--}}
+                {{--                                        clinic to…</p><a class="button button-link" href="#">View projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-7-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>MANUFACTURING / INDUSTRIAL</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-7-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">MANUFACTURING / INDUSTRIAL</a></h6>--}}
+                {{--                                    <p>Building a manufacturing facility or a factory house can be much more challenging--}}
+                {{--                                        than building…</p><a class="button button-link" href="#">View projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-sm-6 col-lg-4 col-xl-3">--}}
+                {{--                    <!-- Thumb creative-->--}}
+                {{--                    <div class="thumb-creative">--}}
+                {{--                        <div class="thumb-creative__inner">--}}
+                {{--                            <div class="thumb-creative__front">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-8-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6>WAREHOUSE / LOGISTICS</h6>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="thumb-creative__back">--}}
+                {{--                                <figure class="thumb-creative__image-wrap"><img class="thumb-creative__image"--}}
+                {{--                                                                                src="images/project-8-480x361.jpg"--}}
+                {{--                                                                                alt="" width="480" height="361"/>--}}
+                {{--                                </figure>--}}
+                {{--                                <div class="thumb-creative__content">--}}
+                {{--                                    <h6 class="thumb-creative__title"><a href="#">WAREHOUSE / LOGISTICS</a></h6>--}}
+                {{--                                    <p>While building a warehouse for an e-store is no easy feat itself, think about--}}
+                {{--                                        building…</p><a class="button button-link" href="#">View projects</a>--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
             </div>
         </div>
     </section>
@@ -458,11 +462,13 @@
                                 style="aspect-ratio: 418/315;"
                             />
                             <div class="post-classic-title">
-                                <h6><a href="#">{{ $post->title }}</a></h6>
+                                <h6><a href="{{ route('web.post.show', $post->slug) }}"
+                                       title="{{ $post->title }}">{{ $post->title }}</a></h6>
                             </div>
                             <div class="post-meta">
                                 <div class="group">
-                                    <a href="#">
+                                    <a href="{{ route('web.post.show', $post->slug) }}"
+                                       title="{{ $post->created_at->format('d/m/Y') }}">
                                         <time datetime="2021">{{ $post->created_at->format('d/m/Y') }}</time>
                                     </a>
                                 </div>
@@ -473,42 +479,6 @@
                         </article>
                     </div>
                 @endforeach
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Post classic-->--}}
-                {{--                    <article class="post-classic post-minimal"><img--}}
-                {{--                            src="{{ asset('theme/images/home-post-2-418x315.jpg') }}" alt="" width="418" height="315"/>--}}
-                {{--                        <div class="post-classic-title">--}}
-                {{--                            <h6><a href="#">Bike parts warehouse, DE</a></h6>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="post-meta">--}}
-                {{--                            <div class="group"><a href="#">--}}
-                {{--                                    <time datetime="2021">Jan.20, 2021</time>--}}
-                {{--                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="post-classic-body">--}}
-                {{--                            <p>Delaware proved to be a very friendly place to work at… While invited there for--}}
-                {{--                                completing a mid-sized warehouse for…</p>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
-                {{--                <div class="col-md-6 col-xl-4">--}}
-                {{--                    <!-- Post classic-->--}}
-                {{--                    <article class="post-classic post-minimal"><img--}}
-                {{--                            src="{{ asset('theme/images/home-post-3-418x315.jpg') }}" alt="" width="418" height="315"/>--}}
-                {{--                        <div class="post-classic-title">--}}
-                {{--                            <h6><a href="#">Joy Hotel & Casino</a></h6>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="post-meta">--}}
-                {{--                            <div class="group"><a href="#">--}}
-                {{--                                    <time datetime="2021">Jan.20, 2021</time>--}}
-                {{--                                </a><a class="meta-author" href="#">by Brian Williamson</a></div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="post-classic-body">--}}
-                {{--                            <p>This hotel & casino complex is our most recent completed building… The whole structure--}}
-                {{--                                that took us 6 months to…</p>--}}
-                {{--                        </div>--}}
-                {{--                    </article>--}}
-                {{--                </div>--}}
             </div>
         </div>
     </section>

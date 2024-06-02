@@ -13,4 +13,16 @@ class PostRepository extends AbstractRepository
     {
         parent::__construct(Post::class);
     }
+
+    public function findPostsBefore(Post $post): iterable
+    {
+        return $this->model()
+            ->where(
+                'created_at',
+                '<',
+                $post->created_at
+            )
+            ->orderByDesc('created_at')
+            ->get();
+    }
 }
