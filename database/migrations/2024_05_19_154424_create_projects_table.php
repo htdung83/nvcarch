@@ -27,6 +27,7 @@ return new class extends Migration
             $table->unsignedBigInteger('project_category_id');
             $table->string('name', 100);
             $table->string('slug', 255);
+            $table->string('img_url', 255)->nullable();
             $table->string('description', 100)->nullable();
             $table->text('content')->nullable();
             $table->tinyInteger('enabled')->default(0);

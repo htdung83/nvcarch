@@ -29,7 +29,8 @@
                     <select id="category" name="category" class="form-control">
                         <option value="">- chọn -</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}" @selected(old('category', $needle->project_category_id) == $category->id)>{{ $category->name }}</option>
+                            <option
+                                value="{{ $category->id }}" @selected(old('category', $needle->project_category_id) == $category->id)>{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -60,7 +61,8 @@
 
                 <div class="mb-3">
                     <label for="content">Mô tả chi tiết dự án</label>
-                    <textarea id="content" name="content" class="form-control">{{ old('content', $needle->content) }}</textarea>
+                    <textarea id="content" name="content"
+                              class="form-control">{{ old('content', $needle->content) }}</textarea>
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
@@ -79,6 +81,9 @@
 
 @push('extraCss')
     <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
+    <style>
+        .cke_contents body.cke_editable {padding: 0.5rem;}
+    </style
 @endpush
 
 @push('extraJs')

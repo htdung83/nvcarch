@@ -8,9 +8,14 @@
     <div class="table-responsive">
         @IsSuperAdmin
         <div class="d-flex align-items-center gap-3 mb-3">
-            <form action="{{ request()->url() }}" method="GET" class="d-flex align-items-center px-2 py-1 border border-3 rounded-3 w-100 w-lg-25">
-                <span class="bi bi-search"></span>
-                <input type="text" name="keywords" value="{{ old('keywords') }}" placeholder="Nhập từ khóa ..." class="form-control border-0 shadow-none" autofocus>
+            <form action="{{ request()->url() }}" method="GET" class="w-100 w-lg-25">
+                <div class="input-group">
+                    <input type="text" name="keywords" value="{{ request('keywords') }}" placeholder="Nhập từ khóa ..."
+                           class="form-control shadow-none" autofocus>
+                    <button type="submit" class="btn btn-outline-secondary">
+                        <span class="bi bi-search"></span>
+                    </button>
+                </div>
             </form>
 
             <a href="{{ route('admin.projects.create') }}" class="btn btn-success rounded-pill text-nowrap">

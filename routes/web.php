@@ -9,6 +9,8 @@ Route::name('web.')->group(function () {
     Route::get('/', [HomePageController::class, 'index'])->name('home');
 
     Route::get('bai-viet/{slug}', [PostController::class, 'show'])->name('post.show');
+    Route::get('/loai-du-an/{slug}', [ProjectCategoryController::class, 'show'])->name('project-categories.show');
+    Route::get('/du-an/{slug}', [ProjectController::class, 'show'])->name('projects.show');
 });
 
 Route::name('admin.')

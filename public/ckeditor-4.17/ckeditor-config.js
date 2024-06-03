@@ -55,6 +55,7 @@ CKEDITOR.editorConfig = function (config) {
     config.extraPlugins = 'youtube';
     config.youtube_responsive = true;
     config.allowedContent = true;
+    config.extraAllowedContent = 'figure figcaption';
     config.filebrowserImageBrowseUrl = document.location.hostname + '/laravel-filemanager?type=training-program';
     config.filebrowserImageUploadUrl = document.location.hostname + '/laravel-filemanager?type=training-program&_token=';
     config.filebrowserBrowseUrl = document.location.hostname + '/laravel-filemanager?type=training-program';

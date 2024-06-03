@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreOrUpdateProjectRequest;
-use App\Models\Project;
 use App\Repositories\ProjectCategoryRepository;
 use App\Repositories\ProjectRepository;
 use App\Traits\AdminControllerTrait;
@@ -30,7 +29,7 @@ class ProjectController extends Controller
         $this->rememberCurrentUrl();
 
         $list = $this->repository->search(
-            queries: $request->all(),
+            queries: $request->except(['page', 'size']),
             orderBy: ['id' => 'desc'],
             relationships: ['category'],
             page: $request->input('page', 1),

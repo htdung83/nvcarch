@@ -12,6 +12,7 @@ class Project extends Model
     protected $fillable = [
         'name',
         'slug',
+        'img_url',
         'description',
         'content',
         'enabled',
@@ -25,5 +26,10 @@ class Project extends Model
             'project_category_id'
         )
             ->withDefault(['name' => '- n/a -']);
+    }
+
+    public function scopeCategory($query, int $categoryId): void
+    {
+        $query->where('project_category_id', $categoryId);
     }
 }
