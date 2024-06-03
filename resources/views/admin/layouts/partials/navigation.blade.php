@@ -32,10 +32,13 @@
         </a>
         <ul class="rd-navbar-dropdown">
             @if(auth()->user()->isSuperAdmin())
-            <li>
-                <a href="{{ route('admin.users.index') }}">Quản lý Người dùng</a>
-            </li>
+                <li>
+                    <a href="{{ route('admin.users.index') }}">Quản lý Người dùng</a>
+                </li>
             @endif
+            <li>
+                <a href="{{ route('admin.password.create') }}">Đổi mật khẩu</a>
+            </li>
             <li>
                 <a href="#"
                    onclick="document.getElementById('logoutForm').submit(); return false;">Thoát</a>

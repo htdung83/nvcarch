@@ -10,6 +10,9 @@ Route::get('/', [DashboardController::class, 'index'])
 
 // Route::any('admin/laravel-filemanager/upload', [UploadController::class, 'upload'])->name('unisharp.lfm.upload');
 
+Route::get('/password', [PasswordController::class, 'create'])->name('password.create');
+Route::post('/password', [PasswordController::class, 'store'])->name('password.store');
+
 Route::resources([
     'services' => ServiceController::class,
     'projects' => ProjectController::class,
