@@ -11,6 +11,7 @@ class AboutUs extends Model
     protected $fillable = [
         'title',
         'slug',
+        'slogan',
         'headline',
         'content',
         'button_url',

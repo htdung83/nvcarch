@@ -32,6 +32,7 @@ class AboutUsController extends Controller
                 [
                     'title' => 'required',
                     'headline' => 'required',
+                    'slogan' => 'nullable',
                     'content' => 'required',
                     'button_url' => 'nullable',
                 ]
@@ -51,6 +52,7 @@ class AboutUsController extends Controller
                     'title' => $request->input('title'),
                     'slug' => Str::slug($request->input('title')),
                     'headline' => $request->input('headline'),
+                    'slogan' => $request->input('slogan'),
                     'content' => $request->input('content'),
                     'button_url' => $request->input('button_url', '#'),
                     'img_url' => $imgUrl,

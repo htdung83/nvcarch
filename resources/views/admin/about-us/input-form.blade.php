@@ -20,6 +20,12 @@
                 </div>
 
                 <div class="mb-2">
+                    <label for="title">Slogan</label>
+                    <input type="text" id="slogan" name="slogan" value="{{ old('slogan', $needle->slogan) }}"
+                           class="form-control"/>
+                </div>
+
+                <div class="mb-2">
                     <label for="headline">Headline</label>
                     <input type="text" id="headline" name="headline" value="{{ old('headline', $needle->headline) }}"
                            class="form-control" autofocus/>

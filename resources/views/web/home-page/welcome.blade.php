@@ -52,7 +52,9 @@
                 <div class="row justify-content-md-center row-30 row-md-50">
                     <div class="col-md-11 col-lg-10 col-xl-6">
                         <h4 class="heading-decorated yellow-decorated">{{ $aboutUs->title }}</h4>
-                        <p class="heading-6 text-width-1">{{ $aboutUs->headline }}</p>
+                        <h5 class="fw-bold mb-3">{{ $aboutUs->slogan }}</h5>
+
+                        <p class="heading-6 text-secondary text-width-1">{{ $aboutUs->headline }}</p>
                         <p>{{ $aboutUs->content }}</p><a class="button button-primary" href="#contacts">LIÊN HỆ NGAY</a>
                     </div>
                     <div class="col-md-11 col-lg-10 col-xl-6"><img src="{{ asset($aboutUs->img_url) }}" alt=""
@@ -158,18 +160,20 @@
         <div class="container-fluid container-flex">
             <div class="row g-0">
                 @foreach($projectCategoryList as $projectCategory)
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="col-sm-6">
                         <!-- Thumb creative-->
                         <div class="thumb-creative">
                             <div class="thumb-creative__inner">
                                 <div class="thumb-creative__front">
                                     <figure class="thumb-creative__image-wrap">
-                                        <img class="thumb-creative__image"
+                                        <img class=""
                                              src="{{ asset($projectCategory->img_url) }}"
                                              alt="" width="480" height="361"/>
                                     </figure>
-                                    <div class="thumb-creative__content">
-                                        <h6>{{ $projectCategory->name }}</h6>
+                                    <div class="thumb-creative__content d-flex align-items-center justify-content-center">
+                                        <span class="py-3 px-4" style="background-color: rgb(12 16 33 / 50%); width: auto !important;">
+                                            <h6 class="h3">{{ $projectCategory->name }}</h6>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="thumb-creative__back">
@@ -179,9 +183,12 @@
                                              alt="" width="480" height="361"/>
                                     </figure>
                                     <div class="thumb-creative__content">
-                                        <h6 class="thumb-creative__title"><a href="#">{{ $projectCategory->name }}</a></h6>
-                                        <p>{{ $projectCategory->description }}</p>
-                                        <a class="button button-link" href="{{ route('web.project-categories.show', $projectCategory->slug) }}">Dự án đã thực hiện</a>
+                                        <h6 class="thumb-creative__title h5"><a href="#">{{ $projectCategory->name }}</a>
+                                        </h6>
+                                        {{--                                        <p class="p-5">{{ $projectCategory->description }}</p>--}}
+                                        <a class="button button-link"
+                                           href="{{ route('web.project-categories.show', $projectCategory->slug) }}">Dự
+                                            án đã thực hiện</a>
                                     </div>
                                 </div>
                             </div>
