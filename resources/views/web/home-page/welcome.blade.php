@@ -162,13 +162,13 @@
                 @foreach($projectCategoryList as $projectCategory)
                     <div class="col-sm-6">
                         <!-- Thumb creative-->
-                        <div class="thumb-creative">
+                        <div class="thumb-creative w-100">
                             <div class="thumb-creative__inner">
                                 <div class="thumb-creative__front">
                                     <figure class="thumb-creative__image-wrap">
                                         <img class=""
                                              src="{{ asset($projectCategory->img_url) }}"
-                                             alt="" width="480" height="361"/>
+                                             alt="{{ $projectCategory->name }}" width="480" height="361"/>
                                     </figure>
                                     <div class="thumb-creative__content d-flex align-items-center justify-content-center">
                                         <span class="py-3 px-4" style="background-color: rgb(12 16 33 / 50%); width: auto !important;">
@@ -183,7 +183,7 @@
                                              alt="" width="480" height="361"/>
                                     </figure>
                                     <div class="thumb-creative__content">
-                                        <h6 class="thumb-creative__title h5"><a href="#">{{ $projectCategory->name }}</a>
+                                        <h6 class="thumb-creative__title h4"><a href="#">{{ $projectCategory->name }}</a>
                                         </h6>
                                         {{--                                        <p class="p-5">{{ $projectCategory->description }}</p>--}}
                                         <a class="button button-link"
