@@ -3,13 +3,11 @@
 namespace App\Repositories;
 
 use App\Models\Project;
-use App\Traits\ModelHasPositionTrait;
 use App\Traits\UtilsTrait;
 use Illuminate\Database\Eloquent\Builder;
 
 class ProjectRepository extends AbstractRepository
 {
-    use ModelHasPositionTrait;
     use UtilsTrait;
 
     public function __construct()

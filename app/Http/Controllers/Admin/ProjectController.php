@@ -49,14 +49,11 @@ class ProjectController extends Controller
 
     public function create()
     {
-        $nextPosition = $this->repository->getNextPosition();
-
         $needle = $this->repository->model();
 
         return view(
             'admin.projects.input-form',
             [
-                'nextPosition' => $nextPosition,
                 'needle' => $needle,
                 'categories' => $this->getCategoryList(),
                 'backToListUrl' => $this->getBackToListUrl()
