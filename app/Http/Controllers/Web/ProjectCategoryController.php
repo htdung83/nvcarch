@@ -17,6 +17,7 @@ class ProjectCategoryController extends Controller
         }
 
         $projectList = Project::query()
+            ->isEnabled()
             ->category($needle->id)
             ->paginate(
                 request(

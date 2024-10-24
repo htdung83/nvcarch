@@ -9,13 +9,17 @@ class ProjectController extends Controller
 {
     public function show($slug)
     {
-        $needle = Project::with('category')->whereSlug($slug)->first();
+        $needle = Project::with('category')
+            ->isEnabled()
+            ->whereSlug($slug)
+            ->first();
 
         if (is_null($needle)) {
             abort(404);
         }
 
         $relatedProjects = Project::query()
+            ->isEnabled()
             ->category($needle->category->id)
             ->where('id', '<>', $needle->id)
             ->inRandomOrder()

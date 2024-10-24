@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -18,6 +19,11 @@ class Project extends Model
         'enabled',
         'project_category_id',
     ];
+
+    public function scopeIsEnabled(Builder $query): void
+    {
+        $query->where('enabled', 1);
+    }
 
     public function category(): BelongsTo
     {
